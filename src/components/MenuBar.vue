@@ -31,7 +31,6 @@
 import {downloadFile} from '../export'
 import {importFile,	loadPreset,	startNewProject} from '../import'
 import {View} from './Preview'
-import {t} from '../i18n'
 
 import vscode from '../vscode_extension'
 import { Share2, HelpCircle } from 'lucide-vue'

@@ -40,5 +40,473 @@
         "Switch to Code": "Switch to Code",
         "Code": "Code",
         "Preview": "Preview"
+    },
+    "Sidebar": {
+        "#setup": {
+            "$Text": "Quick Setup"
+        },
+        "#effect": {
+            "$Text": "File",
+            "#meta": {
+                "$Text": "File",
+                "#identifier": {
+                    "$Text": "Identifier",
+                    "$Description": "This is the name the particle emitter is referred to as. Should have a namespace."
+                }
+            },
+            "#space": {
+                "$Text": "Space",
+                "#local_position": {
+                    "$Text": "Local Position",
+                    "$Description": "When enabled and the effect is attached to an entity, the particles will simulate in entity space."
+                },
+                "#local_rotation": {
+                    "$Text": "Local Rotation",
+                    "$Description": "When enabled and the effect is attached to an entity, the particle rotation will simulate in entity space. Only works if local position is enabled too."
+                },
+                "#local_velocity": {
+                    "$Text": "Local Velocity",
+                    "$Description": "When enabled, the emitter's velocity will be added to the initial particle velocity."
+                }
+            }
+        },
+        "#emitter": {
+            "$Text": "Emitter",
+            "#rate": {
+                "$Text": "Spawn Amount",
+                "#mode": {
+                    "$Text": "Mode",
+                    "$Description": "",
+                    "$Options": {
+                        "#steady": "Steady",
+                        "#instant": "Instant",
+                        "#manual": "Manual"
+                    }
+                },
+                "#rate": {
+                    "$Text": "Rate",
+                    "$Description": "How often a particle is emitted, in particles/second."
+                },
+                "#amount": {
+                    "$Text": "Amount",
+                    "$Description": "How many particles are spawned at once."
+                },
+                "#maximum": {
+                    "$Text": "Maximum",
+                    "$Description": "Maximum amount of particles that can be active before the emitter stops spawning new ones."
+                }
+            },
+            "#lifetime": {
+                "$Text": "Emitter Lifetime",
+                "$Description": "",
+                "#mode": {
+                    "$Text": "Mode",
+                    "$Options": {
+                        "#looping": "Looping",
+                        "#once": "Once",
+                        "#expression": "Expression"
+                    }
+                },
+                "#active_time": {
+                    "$Text": "Active Time",
+                    "$Description": "How long the emitter will be active for."
+                },
+                "#sleep_time": {
+                    "$Text": "Sleep Time",
+                    "$Description": "How long the emitter will pause and not emit particles, when used in looping mode."
+                },
+                "#activation": {
+                    "$Text": "Activation",
+                    "$Description": "When the expression is non-zero, the emitter will start emitting particles."
+                },
+                "#expiration": {
+                    "$Text": "Expiration",
+                    "$Description": "Emitter will expire if the expression is non-zero."
+                }
+            },
+            "#shape": {
+                "$Text": "Spawn Shape",
+                "$Description": "",
+                "#mode": {
+                    "$Text": "Mode",
+                    "$Options": {
+                        "#point": "Point",
+                        "#sphere": "Sphere",
+                        "#box": "Box",
+                        "#disc": "Disc",
+                        "#entity_aabb": "Entity Bounding Box"
+                    }
+                },
+                "#offset": {
+                    "$Text": "Offset",
+                    "$Description": "Specifies the offset from the emitter to emit each particle."
+                },
+                "#radius": {
+                    "$Text": "Radius",
+                    "$Description": "Sphere or disc radius."
+                },
+                "#half_dimensions": {
+                    "$Text": "Box Size",
+                    "$Description": "Half dimensions of the box formed around the emitter."
+                },
+                "#plane_normal": {
+                    "$Text": "Plane Normal",
+                    "$Description": "Specifies the normal of the disc plane, the disc will be perpendicular to this direction."
+                },
+                "#surface_only": {
+                    "$Text": "Surface Only",
+                    "$Description": "Emit only from the surface of the shape."
+                }
+            }
+        },
+        "#motion": {
+            "$Text": "Motion",
+            "#motion": {
+                "$Text": "Motion",
+                "$Description": "",
+                "#mode": {
+                    "$Text": "Mode",
+                    "$Options": {
+                        "#dynamic": "Dynamic",
+                        "#parametric": "Parametric",
+                        "#static": "Static"
+                    }
+                },
+                "#direction_mode": {
+                    "$Text": "Direction",
+                    "$Description": "The direction of emitted particles in regards to the emitter shape.",
+                    "$Options": {
+                        "#outwards": "Outwards",
+                        "#inwards": "Inwards",
+                        "#direction": "Custom"
+                    }
+                },
+                "#direction": {
+                    "$Text": "Direction",
+                    "$Description": "The dDirectionirection of emitted particles."
+                },
+                "#linear_speed": {
+                    "$Text": "Speed",
+                    "$Description": "Starts the particle with a specified speed, using the direction specified by the emitter shape."
+                },
+                "#linear_acceleration": {
+                    "$Text": "Acceleration",
+                    "$Description": "The linear acceleration applied to the particle in blocks/sec/sec."
+                },
+                "#linear_drag_coefficient": {
+                    "$Text": "Linear Drag",
+                    "$Description": "Think of this as air-drag.  The higher the value, the more drag."
+                },
+                "#relative_position": {
+                    "$Text": "Offset",
+                    "$Description": "Directly set the position relative to the emitter."
+                },
+                "#relative_direction": {
+                    "$Text": "Direction",
+                    "$Description": "Directly set the 3d direction of the particle."
+                }
+            },
+            "#rotation": {
+                "$Text": "Rotation",
+                "$Description": "",
+                "#mode": {
+                    "$Text": "Mode",
+                    "$Options": {
+                        "#dynamic": "Dynamic",
+                        "#parametric": "Parametric"
+                    }
+                },
+                "#initial_rotation": {
+                    "$Text": "Start Rotation",
+                    "$Description": "Specifies the initial rotation in degrees."
+                },
+                "#rotation_rate": {
+                    "$Text": "Speed",
+                    "$Description": "Specifies the spin rate in degrees/second."
+                },
+                "#rotation_acceleration": {
+                    "$Text": "Acceleration",
+                    "$Description": "Acceleration applied to the rotation speed of the particle in degrees/sec/sec."
+                },
+                "#rotation_drag_coefficient": {
+                    "$Text": "Linear Drag",
+                    "$Description": "Rotation resistance. Higher numbers will retard the rotation over time."
+                },
+                "#rotation": {
+                    "$Text": "Rotation",
+                    "$Description": "Directly set the rotation of the particle."
+                }
+            },
+            "#collision": {
+                "$Text": "Collision",
+                "#toggle": {
+                    "$Text": "Collide",
+                    "$Description": "Enable collision of the particle with the world."
+                },
+                "#collision_radius": {
+                    "$Text": "Radius",
+                    "$Description": "The radius of the particle, as used for collision."
+                },
+                "#collision_drag": {
+                    "$Text": "Collision Drag",
+                    "$Description": "Alters the speed of the particle when it has collided."
+                },
+                "#coefficient_of_restitution": {
+                    "$Text": "Bounciness",
+                    "$Description": "The amount of momentum that is maintained on bounce. Set to 0.0 to not bounce, 1.0 to bounce back up to original height."
+                },
+                "#condition": {
+                    "$Text": "Condition",
+                    "$Description": "Enables collision when true / non-zero or unset."
+                },
+                "#events": {
+                    "$Text": "Events",
+                    "$Description": "Events to fire when the particle collides."
+                },
+                "#expire_on_contact": {
+                    "$Text": "Expire On Contact",
+                    "$Description": "Removes the particle when it hits a block."
+                }
+            }
+        },
+        "#appearance": {
+            "$Text": "Appearance",
+            "#appearance": {
+                "$Text": "Appearance",
+                "#size": {
+                    "$Text": "Size",
+                    "$Description": "Specifies the x/y size of the particle billboard."
+                },
+                "#material": {
+                    "$Text": "Material",
+                    "$Description": "Material to use for the particles.",
+                    "$Options": {
+                        "#particles_alpha": "Alpha Test",
+                        "#particles_blend": "Blend",
+                        "#particles_add": "Additive",
+                        "#particles_opaque": "Opaque",
+                        "#custom": "Custom"
+                    }
+                },
+                "#facing_camera_mode": {
+                    "$Text": "Facing",
+                    "$Description": "Modes to orient the particle billboards facing the camera.",
+                    "$Options": {
+                        "#rotate_xyz": "Rotate XYZ",
+                        "#rotate_y": "Rotate Y",
+                        "#lookat_xyz": "Look at XYZ",
+                        "#lookat_y": "Look at Y",
+                        "#lookat_direction": "Look at Direction",
+                        "#direction_x": "Direction X",
+                        "#direction_y": "Direction Y",
+                        "#direction_z": "Direction Z",
+                        "#emitter_transform_xy": "Emitter XY-Plane",
+                        "#emitter_transform_xz": "Emitter XZ-Plane",
+                        "#emitter_transform_yz": "Emitter YZ-Plane"
+                    }
+                },
+                "#direction_mode": {
+                    "$Text": "Direction",
+                    "$Description": "Specifies how to calculate the billboard direction of a particle.",
+                    "$Options": {
+                        "#derive_from_velocity": "From Motion",
+                        "#custom": "Custom"
+                    }
+                },
+                "#speed_threshold": {
+                    "$Text": "Min Speed",
+                    "$Description": "The direction is set if the speed of the particle is above the threshold. The default is 0.01."
+                },
+                "#direction": {
+                    "$Text": "Direction",
+                    "$Description": "The facing direction of emitted particles."
+                },
+                "#light": {
+                    "$Text": "Environment Lighting",
+                    "$Description": "If enabled, the particle gets darker at night and in darker areas. Otherwise the particle always displays at full brightness."
+                }
+            },
+            "#color": {
+                "$Text": "Color",
+                "$Description": "",
+                "#mode": {
+                    "$Text": "Color Mode",
+                    "$Options": {
+                        "#static": "Static",
+                        "#gradient": "Gradient",
+                        "#expression": "Expression"
+                    }
+                },
+                "#picker": {
+                    "$Text": "Color",
+                    "$Description": "Set a static color for all emitted particles. Transparency is supported if the material supports blending."
+                },
+                "#interpolant": {
+                    "$Text": "Interpolant",
+                    "$Description": "Interpolant for the gradient value. A color for each particle will be picked from the gradient using the result of this expression, between 0 and \"Range\"."
+                },
+                "#range": {
+                    "$Text": "Range",
+                    "$Description": "The range of the color gradient. By default, gradients range from 0 to 1."
+                },
+                "#gradient": {
+                    "$Text": "Gradient",
+                    "$Description": "Create a gradient by setting, arranging, and recoloring individual color points."
+                },
+                "#expression": {
+                    "$Text": "Color",
+                    "$Description": "Set the color per particle using Molang expressions in RGBA channels between 0 and 1. Alpha channel is supported if the material supports blending."
+                }
+            }
+        },
+        "#texture": {
+            "$Text": "Texture & UV",
+            "#texture": {
+                "$Text": "Texture",
+                "#path": {
+                    "$Text": "Texture",
+                    "$Description": "Path to the texture, starting from the texture pack. Example: textures/particle/snowflake."
+                }
+            },
+            "#uv": {
+                "$Text": "UV",
+                "#mode": {
+                    "$Text": "UV Mode",
+                    "$Description": "",
+                    "$Options": {
+                        "#static": "Static",
+						"#full": "Full Size",
+						"#animated": "Animated"
+                    }
+                },
+                "#size": {
+                    "$Text": "Texture Size",
+                    "$Description": "Resolution of the texture, used for UV mapping."
+                },
+                "#uv": {
+                    "$Text": "UV Start",
+                    "$Description": "UV start coordinates."
+                },
+                "#uv_size": {
+                    "$Text": "UV Size",
+                    "$Description": "UV size coordinates"
+                },
+                "#uv_step": {
+                    "$Text": "UV Step",
+                    "$Description": "UV Offset per frame."
+                },
+                "#frames_per_second": {
+                    "$Text": "FPS",
+                    "$Description": "Animation frames per second."
+                },
+                "#max_frame": {
+                    "$Text": "Max Frame",
+                    "$Description": "Maximum amount of animation frames to draw from the flipbook."
+                },
+                "#stretch_to_lifetime": {
+                    "$Text": "Stretch To Lifetime",
+                    "$Description": "Enable to stretch the frames in the animation to the expected lifetime of the particle."
+                },
+                "#loop": {
+                    "$Text": "Loop",
+                    "$Description": "Loop the texture animation."
+                }
+            }
+        },
+        "#lifetime": {
+            "$Text": "Time",
+            "#lifetime": {
+                "$Text": "Particle Lifetime",
+                "#max_lifetime": {
+                    "$Text": "Max Age",
+                    "$Description": "Maximum age of the particle in seconds."
+                },
+                "#expiration_expression": {
+                    "$Text": "Kill Expression",
+                    "$Description": "This expression makes the particle expire when true (non-zero)."
+                },
+                "#kill_plane": {
+                    "$Text": "Kill Plane",
+                    "$Description": "Particles that cross this plane expire. The plane is relative to the emitter, but oriented in world space. The four parameters are the usual 4 elements of a plane equation."
+                },
+                "#expire_in": {
+                    "$Text": "Kill in Blocks",
+                    "$Description": "List of blocks that let the particle expire on contact. Enter the block IDs including the namespace."
+                },
+                "#expire_outside": {
+                    "$Text": "Only in Blocks",
+                    "$Description": "List of blocks outside of which the particle expires. Enter the block IDs including the namespace."
+                }
+            }
+        },
+        "#events": {
+            "$Text": "Events",
+            "#events": {
+                "$Text": "Events"
+            },
+            "#emitter_events": {
+                "$Text": "Emitter Event Triggers",
+                "#creation": {
+                    "$Text": "On Creation",
+                    "$Description": "Events to fire when the emitter is spawned."
+                },
+                "#expiration": {
+                    "$Text": "On Expiration",
+                    "$Description": "Events to fire when the emitter stops to exist."
+                },
+                "#travel_distance": {
+                    "$Text": "Travel Distance",
+                    "$Description": "Fire an event when the emitter has moved a certain distance. Emitters can move when they are attached to an entity that moves. Distances are specified in blocks."
+                },
+                "#looping_travel_distance": {
+                    "$Text": "Travel Distance Looping",
+                    "$Description": "Fire an event every time the emitter has moved a certain distance. Emitters can move when they are attached to an entity that moves. Distances are specified in blocks."
+                },
+                "#timeline": {
+                    "$Text": "Timeline",
+                    "$Description": "Fire events at specific times during the lifetime of the emitter."
+                }
+            },
+            "#particle_events": {
+                "$Text": "Particle Event Triggers",
+                "#creation": {
+                    "$Text": "On Creation",
+                    "$Description": "Events to fire when the particle is spawned."
+                },
+                "#expiration": {
+                    "$Text": "On Expiration",
+                    "$Description": "Events to fire when the particle stops to exist."
+                },
+                "#timeline": {
+                    "$Text": "Timeline",
+                    "$Description": "Fire events at specific times during the lifetime of the particle."
+                }
+            }
+        },
+        "#variables": {
+            "$Text": "Variables & Curves",
+            "#variables": {
+                "$Text": "Variables",
+                "#creation_vars": {
+                    "$Text": "Start Variables",
+                    "$Description": "Set up Molang variables when the emitter starts."
+                },
+                "#tick_vars": {
+                    "$Text": "Tick Variables",
+                    "$Description": "Molang variables that get processed for every emitter update."
+                },
+                "#particle_update": {
+                    "$Text": "Particle Update",
+                    "$Description": "Run an expression on the emitter for every particle when the emitter updates."
+                },
+                "#particle_render": {
+                    "$Text": "Particle Render",
+                    "$Description": "Run an expression on the emitter each time a particle is rendered."
+                }
+            },
+            "#curves": {
+                "$Text": "Curves"
+            }
+        }
     }
 }

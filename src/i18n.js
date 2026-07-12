@@ -8,6 +8,11 @@ function detectLocale() {
     return localStorage.getItem('language') || navigator.language || navigator.userLanguage
 }
 
+export function setLocale(lang) {
+    i18n.locale = lang
+    localStorage.setItem('language', lang)
+}
+
 export const i18n = new VueI18n({
     locale: detectLocale(),
     fallbackLocale: 'en',
@@ -15,12 +20,3 @@ export const i18n = new VueI18n({
         en
     }
 })
-
-export function setLocale(lang) {
-    i18n.locale = lang
-    localStorage.setItem('language', lang)
-}
-
-export function t(key, values) {
-    return i18n.t(key, values)
-}

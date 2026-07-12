@@ -6,10 +6,10 @@
 			:key="key"
 			:input_type="input.type"
 			v-show="isInputVisible(input, group)"
-			v-bind:title="input.info"
+			v-bind:title="$t(`Sidebar.#${subject_key}.#${group_key}.#${key}.$Description`)"
 			v-bind:id="subject_key +'-'+ group_key +'-'+ key"
 		>
-			<label v-bind:for="key" v-if="input.label">{{ input.label }}</label>
+			<label v-bind:for="key" v-if="input.label">{{ $t(`Sidebar.#${subject_key}.#${group_key}.#${key}.$Text`) }}</label>
 			<div class="tool input_expand_button" v-if="input.expandable" @click="toggleExpand(input)" title="Expand">
 				<ChevronDown :size="20" v-if="!input.expanded" />
 				<ChevronUp :size="20" v-else />
@@ -91,13 +91,15 @@
 
 				<!--Select-->
 				<select v-if="input.type == 'select'" v-bind:id="key" v-model="input.meta_value" v-on:change="input.change($event)">
-					<option v-for="(s_label, s_key) in input.options" :key="s_key" v-bind:id="s_key">{{s_label}}</option>
+					<option v-for="(s_label, s_key) in input.options" :key="s_key" v-bind:id="s_key"
+						:value="s_key">{{ $t(`Sidebar.#${subject_key}.#${group_key}.#${key}.$Options.#${s_key}`) }}</option>
 				</select>
 
 				<!--Select+Custom-->
 				<template v-if="input.type == 'select_custom'">
 					<select v-bind:id="key" v-model="input.meta_value" v-on:change="input.change($event)">
-						<option v-for="(s_label, s_key) in input.options" :key="s_key" v-bind:id="s_key">{{ s_label }}</option>
+						<option v-for="(s_label, s_key) in input.options" :key="s_key" v-bind:id="s_key"
+							:value="s_key">{{ $t(`Sidebar.#${subject_key}.#${group_key}.#${key}.$Options.#${s_key}`) }}</option>
 					</select>
 					<input v-if="input.meta_value == input.options.custom" type="text" v-model="input.value" v-on:input="input.change($event)">
 				</template>

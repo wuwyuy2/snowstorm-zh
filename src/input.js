@@ -71,7 +71,7 @@ export default class Input {
 		if (this.type === 'select_custom' && !this.options[v]) {
 			this.meta_value = this.options.custom;
 		} else if (this.type === 'select' || this.type === 'select_custom') {
-			this.meta_value = this.options[v];
+			this.meta_value = v; // this.options[v];
 		}
 		if (this.type == 'event_timeline') {
 			this.timeline.splice(0);

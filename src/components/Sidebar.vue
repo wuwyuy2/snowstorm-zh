@@ -17,14 +17,14 @@
 					<Clock8 v-if="tab_key == 'lifetime'" />
 					<Tangent v-if="tab_key == 'variables'" />
 					<Zap v-if="tab_key == 'events'" />
-					<div class="sidebar_tab_tooltip">{{ tab.label }}</div>
+					<div class="sidebar_tab_tooltip">{{ $t(`Sidebar.#${tab_key}.$Text`) }}</div>
 				</div>
 			</div>
 
-			<h3>{{ selected_subject.label }}</h3>
+			<h3>{{ $t(`Sidebar.#${selected_subject_key}.$Text`) }}</h3>
 			<div class="input_group" v-for="(group, group_key) in input_groups" :key="group_key">
 				<h4 @click="fold(group)">
-					{{ group.label }}
+					{{ $t(`Sidebar.#${selected_subject_key}.#${group_key}.$Text`) }}
 					<div class="highlighting_button help_button" @click.stop="openHelp(selected_subject_key, group_key)">?</div>
 				</h4>
 				<template v-if="!group._folded">
