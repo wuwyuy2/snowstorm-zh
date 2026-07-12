@@ -1,27 +1,27 @@
 <template>
     <ul id="menu_bar">
         <li v-for="menu in Menu" :key="menu.id" onclick="">
-            <a>{{ menu.label }}</a>
+            <a>{{ $t(`Menu.${menu.label}.$Title`) }}</a>
             <ul class="menu_dropdown">
                 <li v-for="entry in menu.children" :key="entry.id" v-on:click="entry.click(getVM(), $event)">
-                    <a>{{ entry.label }}</a>
+                    <a>{{ $t(`Menu.${menu.label}.${entry.label}`) }}</a>
                 </li>
             </ul>
         </li>
 		
 		<template v-if="isVSCExtension">
         	<li class="mode_selector" @click="openCodeViewer(true)" title="Open Code View to Side"><i class="unicode_icon split">{{'\u2385'}}</i></li>
-        	<li class="mode_selector" @click="openCodeViewer(false)" title="Open as Code View">Switch to Code</li>
+        	<li class="mode_selector" @click="openCodeViewer(false)" title="Open as Code View">$t('Menu.Switch to Code')</li>
 		</template>
 		<template v-else-if="!portrait_view">
-        	<li class="mode_selector code" :class="{selected: selected_tab == 'code'}" @click="$emit('changetab', 'code')">Code</li>
-        	<li class="mode_selector preview" :class="{selected: selected_tab == 'preview'}" @click="$emit('changetab', 'preview')">Preview</li>
+        	<li class="mode_selector code" :class="{selected: selected_tab == 'code'}" @click="$emit('changetab', 'code')">{{$t('Menu.Code')}}</li>
+        	<li class="mode_selector preview" :class="{selected: selected_tab == 'preview'}" @click="$emit('changetab', 'preview')">{{$t('Menu.Preview')}}</li>
 		</template>
 
-		<div v-if="!portrait_view" @click="openHelpPanel()" class="mode_selector highlighting_button" :class="{selected: is_help_panel_open}" title="Documentation">
+		<div v-if="!portrait_view" @click="openHelpPanel()" class="mode_selector highlighting_button" :class="{selected: is_help_panel_open}" :title="$t('Menu.Documentation')">
 			<HelpCircle :size="20" />
 		</div>
-		<div v-if="canShare" @click="onShareParticle" class="mode_selector highlighting_button" title="Share">
+		<div v-if="canShare" @click="onShareParticle" class="mode_selector highlighting_button" :title="$t('Menu.Share')">
 			<Share2 :size="20" />
 		</div>
     </ul>
@@ -31,6 +31,7 @@
 import {downloadFile} from '../export'
 import {importFile,	loadPreset,	startNewProject} from '../import'
 import {View} from './Preview'
+import {t} from '../i18n'
 
 import vscode from '../vscode_extension'
 import { Share2, HelpCircle } from 'lucide-vue'

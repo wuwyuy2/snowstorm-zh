@@ -1,2 +1,44 @@
 {
+    "Menu": {
+        "File": {
+            "$Title": "File",
+            "New File": "New File",
+            "Import": "Import",
+            "Download": "Download"
+        },
+        "Examples": {
+            "$Title": "Examples",
+            "Loading": "Loading",
+            "Rainbow": "Rainbow",
+            "Rain": "Rain",
+            "Snow": "Snow",
+            "Fire": "Fire",
+            "Magic": "Magic",
+            "Trail": "Trail",
+            "Billboard": "Billboard"
+        },
+        "View": {
+            "$Title": "View",
+            "Grid": "Grid",
+            "Reference Block": "Reference Block",
+            "Axis Helper": "Axis Helper",
+            "Take Screenshot": "Take Screenshot"
+        },
+        "Help": {
+            "$Title": "Help",
+            "Open Documentation": "Open Documentation",
+            "Molang Reference": "Molang Reference",
+            "Snowstorm Tutorial": "Snowstorm Tutorial",
+            "Tutorial Video": "Tutorial Video",
+            "Format Documentation": "Format Documentation",
+            "Molang Grapher": "Molang Grapher",
+            "Report a Bug": "Report a Bug",
+            "Discord Server": "Discord Server"
+        },
+        "Documentation": "Documentation",
+        "Share": "Share",
+        "Switch to Code": "Switch to Code",
+        "Code": "Code",
+        "Preview": "Preview"
+    }
 }
