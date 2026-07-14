@@ -43,7 +43,54 @@
     },
     "Sidebar": {
         "#setup": {
-            "$Text": "Quick Setup"
+            "$Text": "Quick Setup",
+            "#shape_and_motion": {
+                "$Text": "Shape & Motion",
+                "#shape": {
+                    "#sphere": "Sphere",
+                    "#rain": "Rain",
+                    "#ring": "Ring",
+                    "#gravitate": "Gravitate to Center"
+                },
+                "#speed": "Speed"
+            },
+            "#timing": {
+                "$Text": "Timing",
+                "#timing": {
+                    "#burst": "Burst",
+                    "#steady": "Steady"
+                },
+                "#amount": "Amount",
+                "#particle_lifetime": "Particle Lifetime"
+            },
+            "#physics": {
+                "$Text": "Physics",
+                "#collision": {
+                    "#none": "None",
+                    "#solid": "Solid",
+                    "#smoke": "Smoke",
+                    "#ball": "Ball",
+                    "#paper": "Paper"
+                }
+            },
+            "#sprite": {
+                "$Text": "Sprite",
+                "#license": {
+                    "$Content": "All sprites listed below are ${LinkText} and free to use and modify.",
+                    "$LinkText": "copyright-free (CC0)"
+                },
+                "#sprite": {
+                    "#ball": "Ball",
+                    "#dirt": "Dirt",
+                    "#leaves": "Leaves",
+                    "#smoke": "Smoke",
+                    "#dust": "Dust",
+                    "#sparkle": "Sparkle",
+                    "#magic": "Magic"
+                },
+                "#random_rotation": "Random Rotation",
+                "#lighting": "Glow in the dark"
+            }
         },
         "#effect": {
             "$Text": "File",

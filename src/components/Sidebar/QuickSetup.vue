@@ -1,126 +1,124 @@
 <template>
 	<div class="quick_setup">
 		<div class="input_group">
-			<h4>Shape & Motion</h4>
+			<h4>{{ $t('Sidebar.#setup.#shape_and_motion.$Text') }}</h4>
 			<ul class="preset_option_list">
 				<li @click="set('shape', 'sphere')" :class="{selected: shape == 'sphere'}">
 					<Loader :size="38" :stroke-width="1" />
-					Sphere
+					{{ $t('Sidebar.#setup.#shape_and_motion.#shape.#sphere') }}
 				</li>
 				<li @click="set('shape', 'rain')" :class="{selected: shape == 'rain'}">
 					<CloudRain :size="38" :stroke-width="1" />
-					Rain
+					{{ $t('Sidebar.#setup.#shape_and_motion.#shape.#rain') }}
 				</li>
 				<li @click="set('shape', 'ring')" :class="{selected: shape == 'ring'}">
 					<Torus :size="38" :stroke-width="1" />
-					Ring
+					{{ $t('Sidebar.#setup.#shape_and_motion.#shape.#ring') }}
 				</li>
 				<li @click="set('shape', 'gravitate')" :class="{selected: shape == 'gravitate'}">
 					<Magnet :size="38" :stroke-width="1" />
-					Gravitate to Center
+					{{ $t('Sidebar.#setup.#shape_and_motion.#shape.#gravitate') }}
 				</li>
 			</ul>
 			<div class="input_bar">
-				<label>Speed</label>
+				<label>{{ $t('Sidebar.#setup.#shape_and_motion.#speed') }}</label>
 				<input type="range" v-model="speed" min="0" max="20" step="0.5" >
 				<label class="range_number_label">{{ speed }}</label>
 			</div>
 		</div>
 
 		<div class="input_group">
-			<h4>Timing</h4>
+			<h4>{{ $t('Sidebar.#setup.#timing.$Text')}}</h4>
 			<ul class="preset_option_list">
 				<li @click="set('timing', 'burst')" :class="{selected: timing == 'burst'}">
 					<Bomb :size="38" :stroke-width="1" />
-					Burst
+					{{ $t('Sidebar.#setup.#timing.#timing.#burst') }}
 				</li>
 				<li @click="set('timing', 'steady')" :class="{selected: timing == 'steady'}">
 					<Timer :size="38" :stroke-width="1" />
-					Steady
+					{{ $t('Sidebar.#setup.#timing.#timing.#steady') }}
 				</li>
 			</ul>
 			<div class="input_bar">
-				<label>Amount</label>
+				<label>{{ $t('Sidebar.#setup.#timing.#amount') }}</label>
 				<input type="range" v-model="amount" min="1" max="120" step="1" >
 				<label class="range_number_label">{{ amount }}</label>
 			</div>
 			<div class="input_bar">
-				<label>Particle Lifetime</label>
+				<label>{{ $t('Sidebar.#setup.#timing.#particle_lifetime') }}</label>
 				<input type="range" v-model="particle_lifetime" min="0.1" max="10" step="0.1" >
 				<label class="range_number_label">{{ particle_lifetime }}</label>
 			</div>
 		</div>
 
 		<div class="input_group">
-			<h4>Physics</h4>
+			<h4>{{ $t('Sidebar.#setup.#physics.$Text')}}</h4>
 			<ul class="preset_option_list">
 				<li @click="set('collision', 'none')" :class="{selected: collision == 'none'}">
 					<CircleSlash :size="38" :stroke-width="1" />
-					None
+					{{ $t('Sidebar.#setup.#physics.#collision.#none') }}
 				</li>
 				<li @click="set('collision', 'solid')" :class="{selected: collision == 'solid'}">
 					<Cuboid :size="38" :stroke-width="1" />
-					Solid
+					{{ $t('Sidebar.#setup.#physics.#collision.#solid') }}
 				</li>
 				<li @click="set('collision', 'smoke')" :class="{selected: collision == 'smoke'}">
 					<Cloud :size="38" :stroke-width="1" />
-					Smoke
+					{{ $t('Sidebar.#setup.#physics.#collision.#smoke') }}
 				</li>
 				<li @click="set('collision', 'ball')" :class="{selected: collision == 'ball'}">
 					<Aperture :size="38" :stroke-width="1" />
-					Ball
+					{{ $t('Sidebar.#setup.#physics.#collision.#ball') }}
 				</li>
 				<li @click="set('collision', 'paper')" :class="{selected: collision == 'paper'}">
 					<Scroll :size="38" :stroke-width="1" />
-					Paper
+					{{ $t('Sidebar.#setup.#physics.#collision.#paper') }}
 				</li>
 			</ul>
 		</div>
 
 		<div class="input_group">
 			<h4>
-				Sprite
+				{{ $t('Sidebar.#setup.#sprite.$Text') }}
 				<CreativeCommons :size="20" @click="show_sprite_license = !show_sprite_license" />
 			</h4>
-			<p style="padding: 2px 12px;" v-if="show_sprite_license">
-				All sprites listed below are <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">copyright-free (CC0)</a> and free to use and modify.
-			</p>
+			<p style="padding: 2px 12px;" v-if="show_sprite_license" v-html="license"></p>
 			<ul class="preset_option_list">
 				<li @click="set('sprite', 'ball')" :class="{selected: sprite == 'ball'}">
 					<img :src="sprites.SpriteBall" height="45" />
-					Ball
+					{{ $t('Sidebar.#setup.#sprite.#sprite.#ball') }}
 				</li>
 				<li @click="set('sprite', 'dirt')" :class="{selected: sprite == 'dirt'}">
 					<img :src="sprites.SpriteDirt" height="45" />
-					Dirt
+					{{ $t('Sidebar.#setup.#sprite.#sprite.#dirt') }}
 				</li>
 				<li @click="set('sprite', 'leaves')" :class="{selected: sprite == 'leaves'}">
 					<img :src="sprites.SpriteLeaves" height="45" />
-					Leaves
+					{{ $t('Sidebar.#setup.#sprite.#sprite.#leaves') }}
 				</li>
 				<li @click="set('sprite', 'smoke')" :class="{selected: sprite == 'smoke'}">
 					<img :src="sprites.SpriteSmoke" height="45" class="frames_8" />
-					Smoke
+					{{ $t('Sidebar.#setup.#sprite.#sprite.#smoke') }}
 				</li>
 				<li @click="set('sprite', 'dust')" :class="{selected: sprite == 'dust'}">
 					<img :src="sprites.SpriteDust" height="45" class="frames_8" />
-					Dust
+					{{ $t('Sidebar.#setup.#sprite.#sprite.#dust') }}
 				</li>
 				<li @click="set('sprite', 'sparkle')" :class="{selected: sprite == 'sparkle'}">
 					<img :src="sprites.SpriteSparkle" height="45" class="frames_4" />
-					Sparkle
+					{{ $t('Sidebar.#setup.#sprite.#sprite.#sparkle') }}
 				</li>
 				<li @click="set('sprite', 'magic')" :class="{selected: sprite == 'magic'}">
 					<img :src="sprites.SpriteMagic" height="45" class="frames_8" />
-					Magic
+					{{ $t('Sidebar.#setup.#sprite.#sprite.#magic') }}
 				</li>
 			</ul>
 			<div class="input_bar">
-				<label for="quick_rotation_checkbox">Random Rotation</label>
+				<label for="quick_rotation_checkbox">{{ $t('Sidebar.#setup.#sprite.#random_rotation') }}</label>
 				<checkbox id="quick_rotation_checkbox" v-model="random_rotation" />
 			</div>
 			<div class="input_bar">
-				<label for="quick_lighting_checkbox">Glow in the dark</label>
+				<label for="quick_lighting_checkbox">{{ $t('Sidebar.#setup.#sprite.#lighting') }}</label>
 				<checkbox id="quick_lighting_checkbox" v-model="lighting" />
 			</div>
 		</div>
@@ -371,7 +369,7 @@ const SetupData = {
 		SpriteSparkle,
 		SpriteMagic
 	},
-	
+
 	shape: DEFAULTS.shape,
 	timing: DEFAULTS.timing,
 	speed: DEFAULTS.speed,
@@ -423,6 +421,15 @@ export default {
 		},
 		random_rotation(value) {
 			this.setInput('motion.rotation.initial_rotation', value ? 'math.random(-180, 180)' : '');
+		}
+	},
+	computed: {
+		license() {
+			let content = this.$t('Sidebar.#setup.#sprite.#license.$Content')
+			let linkText = this.$t('Sidebar.#setup.#sprite.#license.$LinkText')
+			linkText = `<a href="https://creativecommons.org/publicdomain/zero/1.0/"
+					target="_blank" rel="noopener noreferrer">${linkText}</a>`
+			return content.replace("${LinkText}", linkText)
 		}
 	},
 	methods: {
