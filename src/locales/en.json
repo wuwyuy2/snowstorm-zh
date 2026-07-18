@@ -78,10 +78,10 @@
             "$Description": "Show Variable Placeholder Bar"
         },
         "#start_animation": {
-            "$Description": "Play"
+            "$Description": "Restart"
         },
         "#pause_animation": {
-            "$Description": "Pause"
+            "$Description": "Play/Pause"
         },
         "#button_bar": {
             "Confirm": "Confirm",

@@ -45,10 +45,11 @@
             <div class="spacing" />
 
             <div class="tool" @click="startAnimation()" :title="$t('Preview.#start_animation.$Description')">
-                <Play :size="22" />
+                <RotateCcw :size="22" />
             </div>
             <div class="tool" @click="togglePause()" :title="$t('Preview.#pause_animation.$Description')">
-                <Pause :size="22" />
+                <Play :size="22" v-if="paused" />
+                <Pause :size="22" v-else />
             </div>
 
             <div class="spacing" />
@@ -87,7 +88,8 @@
         Pause,
         Hash,
         X,
-        CheckCheck
+        CheckCheck,
+        RotateCcw
     } from 'lucide-vue'
 
     import {EditListeners} from '../edits'
@@ -104,10 +106,12 @@
                     Emitter.start();
                 }
                 Emitter.paused = false;
+                this.notifyPauseState(Emitter.paused);
                 return View.PlaybackController;
             },
             toggle() {
                 Emitter.paused = !Emitter.paused;
+                this.notifyPauseState(Emitter.paused);
                 if (!Emitter.paused) {
                     View.PlaybackController.start();
                 }
@@ -117,6 +121,8 @@
                 Emitter.stop(true);
                 Emitter.paused = true;
                 return View.PlaybackController;
+            },
+            notifyPauseState(paused) {
             }
         }
     }
@@ -315,7 +321,8 @@
             placeholder_keys: [],
             placeholder_values: {},
             show_placeholder_bar: localStorage.getItem('snowstorm_show_placeholder_bar') == 'true',
-            bake_placeholder_key: null
+            bake_placeholder_key: null,
+            paused: true,
         }},
         components: {
             FlipVertical2,
@@ -325,6 +332,7 @@
             Hash,
             X,
             CheckCheck,
+            RotateCcw,
         },
         methods: {
             updateSize() {
@@ -412,6 +420,9 @@
             };
             View.updateVariablePlaceholderList = () => {
                 updateVariablePlaceholderList(this.placeholder_keys);
+            }
+            View.PlaybackController.notifyPauseState = (paused) => {
+                this.paused = paused;
             }
         }
     }
