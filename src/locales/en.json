@@ -552,7 +552,98 @@
                 }
             },
             "#curves": {
-                "$Text": "Curves"
+                "$Text": "Curves",
+                "#id": {
+                    "$Text": "Name",
+                    "$Description": "The Molang variable to be used later in Molang expressions. Must begin with \"variable\"."
+                },
+                "#mode": {
+                    "$Text": "Mode",
+                    "$Description": "Curve interpolation type.",
+                    "$Options": {
+                        "#catmull_rom": "Catmull Rom",
+                        "#linear": "Linear",
+                        "#bezier": "Bézier",
+                        "#bezier_chain": "Bézier Chain"
+                    }
+                },
+                "#input": {
+                    "$Text": "Input",
+                    "$Description": "Horizontal input."
+                },
+                "#range": {
+                    "$Text": "Range",
+                    "$Description": "Horizontal range that the input is mapped to."
+                }
+            }
+        },
+        "EventList": {
+            "Event ID": "Event ID",
+            "Remove Event": "Remove Event"
+        },
+        "EventSubpart": {
+            "#sequence": {
+                "$Text": "Sequence",
+                "#remove_button": {
+                    "$Description": "Remove Option"
+                },
+                "#list_add_button": {
+                    "$Description": "Add Sequence Option"
+                }
+            },
+            "#randomize": {
+                "$Text": "Randomize",
+                "Weight": "Weight",
+                "#remove_button": {
+                    "$Description": "Remove Option"
+                },
+                "#list_add_button": {
+                    "$Description": "Add Sequence Option"
+                }
+            },
+            "#particle_effect": {
+                "$Text": "Particle Effect",
+                "Identifier": {
+                    "$Text": "Identifier",
+                    "#new_particle_identifier": {
+                        "$Description": "Create New Particle"
+                    },
+                    "#select_particle_file": {
+                        "$Description": "Select File"
+                    },
+                    "#select_particle_texture": {
+                        "$Description": "Select Texture"
+                    },
+                    "#edit_particle_file": {
+                        "$Description": "Edit Linked Particle Effect"
+                    },
+                    "#new_particle_dialog": {
+                        "$Text": "Identifier",
+                        "Confirm": "Confirm",
+                        "Cancel": "Cancel"
+                    }
+                },
+                "Type": {
+                    "$Text": "Type"
+                },
+                "Expression": {
+                    "$Text": "Expression"
+                }
+            },
+            "#sound_effect": {
+                "$Text": "Sound",
+                "Sound Event": "Sound Event"
+            },
+            "#expression": {
+                "$Text": "Expression",
+                "$Description": "Run a Molang expression on the event firing emitter."
+            },
+            "#create_bar": {
+                "Particle": "Particle",
+                "Sound": "Sound",
+                "Expression": "Expression",
+                "Sequence": "Sequence",
+                "Randomize": "Randomize"
             }
         }
     }

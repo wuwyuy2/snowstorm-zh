@@ -8,10 +8,10 @@
 			>
 				<div class="event_header_bar">
 					<div class="event_sort_handle" @mousedown="startSortingList($event)"><GripVertical /></div>
-					<label>Event ID</label>
+					<label>{{ $t('Sidebar.EventList.Event ID') }}</label>
 					<input type="text" :value="event_entry.id" @input="renameEvent(event_entry, $event)">
 					<div class="remove_event_button" @click="removeEvent(event_entry)">
-						Remove Event
+						{{ $t('Sidebar.EventList.Remove Event') }}
 					</div>
 				</div>
 				<event-subpart :subpart="event_entry.event" @modify_event="modifyEvent" />

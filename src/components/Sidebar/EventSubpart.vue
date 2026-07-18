@@ -2,7 +2,7 @@
 	<div class="event_subpart">
 		<div v-if="subpart.sequence">
 			<div class="subpart_option_head_bar">
-				<label class="descriptor_label">Sequence</label>
+				<label class="descriptor_label">{{ $t('Sidebar.EventSubpart.#sequence.$Text') }}</label>
 			</div>
 			<ul class="nested_list sortable">
 				<li v-for="(option, index) in subpart.sequence" :key="option.uuid">
@@ -10,66 +10,81 @@
 						<GripHorizontal @mousedown="sortList(subpart.sequence, $event)" />
 						<label>#{{ index }}</label>
 						<div class="fill_line" />
-						<div class="remove_button highlighting_button" title="Remove Option" @click="removeSequenceOption(option)"><X /></div>
+						<div class="remove_button highlighting_button" @click="removeSequenceOption(option)"
+							:title="$t('Sidebar.EventSubpart.#sequence.#remove_button.$Description')"><X /></div>
 					</div>
 					<event-subpart :subpart="option" @modify_event="modifyEvent" />
 				</li>
 			</ul>
-			<list-add-button title="Add Sequence Option" class="list_add_button" @click="addSequenceOption()" />
+			<list-add-button class="list_add_button" @click="addSequenceOption()"
+				:title="$t('Sidebar.EventSubpart.#sequence.#list_add_button.$Description')" />
 		</div>
 		<div v-if="subpart.randomize">
 			<div class="subpart_option_head_bar">
-				<label class="descriptor_label">Randomize</label>
+				<label class="descriptor_label">{{ $t('Sidebar.EventSubpart.#randomize.$Text') }}</label>
 			</div>
 			<ul class="nested_list sortable">
 				<li v-for="option in subpart.randomize" :key="option.uuid">
 					<div class="header_bar">
 						<GripHorizontal @mousedown="sortList(subpart.randomize, $event)" />
-						<label>Weight</label>
+						<label>{{ $t('Sidebar.EventSubpart.#randomize.Weight') }}</label>
 						<input type="number" min="0" v-model.number="option.weight" @input="modifyEvent">
 						<div class="fill_line" />
-						<div class="remove_button highlighting_button" title="Remove Option" @click="removeRandomizeOption(option)"><X /></div>
+						<div class="remove_button highlighting_button" @click="removeRandomizeOption(option)"
+							:title="$t('Sidebar.EventSubpart.#randomize.#remove_button.$Description')"><X /></div>
 					</div>
 					<event-subpart :subpart="option" @modify_event="modifyEvent" />
 				</li>
 			</ul>
-			<list-add-button title="Add Random Option" class="list_add_button" @click="addRandomizeOption()" />
+			<list-add-button class="list_add_button" @click="addRandomizeOption()"
+				:title="$t('Sidebar.EventSubpart.Randomize.#list_add_button.$Description')" />
 		</div>
 		<ul v-if="subpart.particle_effect">
 			<div class="section_bar">
-				<label class="descriptor_label">Particle Effect</label>
+				<label class="descriptor_label">{{ $t('Sidebar.EventSubpart.#particle_effect.$Text') }}</label>
 				<X :size="20" class="highlighting_button" title="Disable Particle Effect" @click="disableParticleSection()" />
 			</div>
 			<li class="input_wrapper">
-				<label>Identifier</label>
+				<label>{{ $t('Sidebar.EventSubpart.#particle_effect.Identifier.$Text') }}</label>
 				<prism-editor :highlight="highlightGeneric" language="" :line-numbers="false"
 					v-model="subpart.particle_effect.effect"
 					placeholder="space:name"
 					@input="modifyEvent($event, 'text')"
 				/>
-				<div class="highlighting_button" @click="$refs.new_particle_dialog.showModal(); new_particle_identifier = subpart.particle_effect.effect;" v-if="!is_extension && !canEditParticleFile()" title="Create New Particle"><FilePlus2 :size="22" /></div>
-				<div class="highlighting_button" @click="selectParticleFile()" v-if="!is_extension" title="Select File"><Upload :size="22" /></div>
-				<div class="highlighting_button" @click="selectParticleTexture()" v-if="!is_extension && canEditParticleFile()" title="Select Texture"><ImagePlus :size="22" /></div>
-				<div class="highlighting_button" @click="editParticleFile()" v-if="canEditParticleFile()" title="Edit Linked Particle Effect"><Pencil :size="22" /></div>
-
-				
-
+				<div class="highlighting_button" v-if="!is_extension && !canEditParticleFile()"
+					@click="$refs.new_particle_dialog.showModal(); new_particle_identifier = subpart.particle_effect.effect;"
+					:title="$t('Sidebar.EventSubpart.#particle_effect.Identifier.#new_particle_identifier.$Description')"
+					><FilePlus2 :size="22" /></div>
+				<div class="highlighting_button" @click="selectParticleFile()" v-if="!is_extension"
+					:title="$t('Sidebar.EventSubpart.#particle_effect.Identifier.#select_particle_file.$Description')"
+					><Upload :size="22" /></div>
+				<div class="highlighting_button" @click="selectParticleTexture()" v-if="!is_extension && canEditParticleFile()"
+					:title="$t('Sidebar.EventSubpart.#particle_effect.Identifier.#select_particle_texture.$Description')"
+					><ImagePlus :size="22" /></div>
+				<div class="highlighting_button" @click="editParticleFile()" v-if="canEditParticleFile()"
+					:title="$t('Sidebar.EventSubpart.#particle_effect.Identifier.#edit_particle_file.$Description')"
+					><Pencil :size="22" /></div>
 				<dialog id="new_particle_dialog" ref="new_particle_dialog" class="modal_dialog">
-					<div class="form_bar"><label>Identifier</label><input type="text" v-model="new_particle_identifier" placeholder="space:name"></div>
+					<div class="form_bar">
+						<label>{{ $t('Sidebar.EventSubpart.#particle_effect.Identifier.#new_particle_dialog.$Text') }}</label>
+						<input type="text" v-model="new_particle_identifier" placeholder="space:name">
+					</div>
 					<div class="button_bar">
-						<button @click="createNewParticleFile(new_particle_identifier)">Confirm</button>
-						<button @click="$refs.new_particle_dialog.close()">Cancel</button>
+						<button @click="createNewParticleFile(new_particle_identifier)"
+							>{{ $t('Sidebar.EventSubpart.#particle_effect.Identifier.#new_particle_dialog.Confirm') }}</button>
+						<button @click="$refs.new_particle_dialog.close()"
+							>{{ $t('Sidebar.EventSubpart.#particle_effect.Identifier.#new_particle_dialog.Cancel') }}</button>
 					</div>
 				</dialog>
 			</li>
 			<li class="input_wrapper">
-				<label>Type</label>
+				<label>{{ $t('Sidebar.EventSubpart.#particle_effect.Type.$Text') }}</label>
 				<select v-model="subpart.particle_effect.type" @change="modifyEvent">
 					<option v-for="(s_label, s_key) in emitter_type_options" :key="s_key" :value="s_key" :id="s_key">{{ s_label }}</option>
 				</select>
 			</li>
 			<li class="input_wrapper">
-				<label>Expression</label>
+				<label>{{ $t('Sidebar.EventSubpart.#particle_effect.Expression.$Text') }}</label>
 				<prism-editor :highlight="highlightMolang" language="" :line-numbers="false"
 					v-model="subpart.particle_effect.pre_effect_expression"
 					placeholder=""
@@ -80,11 +95,11 @@
 		</ul>
 		<ul v-if="subpart.sound_effect">
 			<div class="section_bar">
-				<label class="descriptor_label">Sound</label>
+				<label class="descriptor_label">{{ $t('Sidebar.EventSubpart.#sound_effect.$Text') }}</label>
 				<X :size="20" class="highlighting_button" title="Disable Sound Effect" @click="disableSoundSection()" />
 			</div>
 			<li class="input_wrapper">
-				<label>Sound Event</label>
+				<label>{{ $t('Sidebar.EventSubpart.#sound_effect.Sound Event') }}</label>
 				<prism-editor :highlight="highlightGeneric" language="" :line-numbers="false"
 					v-model="subpart.sound_effect.event_name"
 					placeholder="block.bamboo.hit"
@@ -92,9 +107,10 @@
 				/>
 			</li>
 		</ul>
-		<ul v-if="typeof subpart.expression == 'string'" title="Run a Molang expression on the event firing emitter">
+		<ul v-if="typeof subpart.expression == 'string'" :title="$t('Sidebar.EventSubpart.#expression.$Description')">
 			<div class="section_bar">
-				<label class="descriptor_label">Expression</label>
+				<label class="descriptor_label"
+					>{{ $t('Sidebar.EventSubpart.#expression.$Text') }}</label>
 				<X :size="20" class="highlighting_button" title="Disable Expression" @click="disableExpressionSection()" />
 			</div>
 			<li class="input_wrapper">
@@ -108,13 +124,18 @@
 		</ul>
 		<ul class="create_bar">
 			<template v-if="!subpart.sequence && !subpart.randomize">
-				<li v-if="!subpart.particle_effect" @click="createParticleSection();"><Plus :size="18" />Particle</li>
-				<li v-if="!subpart.sound_effect" @click="createSoundSection();"><Plus :size="18" />Sound</li>
-				<li v-if="!subpart.expression" @click="createExpressionSection();"><Plus :size="18" />Expression</li>
+				<li v-if="!subpart.particle_effect" @click="createParticleSection();"
+					><Plus :size="18" />{{ $t('Sidebar.EventSubpart.#create_bar.Particle') }}</li>
+				<li v-if="!subpart.sound_effect" @click="createSoundSection();"
+					><Plus :size="18" />{{ $t('Sidebar.EventSubpart.#create_bar.Sound') }}</li>
+				<li v-if="!subpart.expression && subpart.expression !== ''" @click="createExpressionSection();"
+					><Plus :size="18" />{{ $t('Sidebar.EventSubpart.#create_bar.Expression') }}</li>
 			</template>
 			<template v-if="!subpart.particle_effect && !subpart.sound_effect && subpart.expression == undefined">
-				<li v-if="!subpart.sequence && !subpart.randomize" @click="createSequenceSection();"><Plus :size="18" />Sequence</li>
-				<li v-if="!subpart.sequence && !subpart.randomize" @click="createRandomizeSection();"><Plus :size="18" />Randomize</li>
+				<li v-if="!subpart.sequence && !subpart.randomize" @click="createSequenceSection();"
+					><Plus :size="18" />{{ $t('Sidebar.EventSubpart.#create_bar.Sequence') }}</li>
+				<li v-if="!subpart.sequence && !subpart.randomize" @click="createRandomizeSection();"
+					><Plus :size="18" />{{ $t('Sidebar.EventSubpart.#create_bar.Randomize') }}</li>
 			</template>
 		</ul>
 	</div>
