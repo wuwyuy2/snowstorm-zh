@@ -43,54 +43,7 @@
     },
     "Sidebar": {
         "#setup": {
-            "$Text": "Quick Setup",
-            "#shape_and_motion": {
-                "$Text": "Shape & Motion",
-                "#shape": {
-                    "#sphere": "Sphere",
-                    "#rain": "Rain",
-                    "#ring": "Ring",
-                    "#gravitate": "Gravitate to Center"
-                },
-                "#speed": "Speed"
-            },
-            "#timing": {
-                "$Text": "Timing",
-                "#timing": {
-                    "#burst": "Burst",
-                    "#steady": "Steady"
-                },
-                "#amount": "Amount",
-                "#particle_lifetime": "Particle Lifetime"
-            },
-            "#physics": {
-                "$Text": "Physics",
-                "#collision": {
-                    "#none": "None",
-                    "#solid": "Solid",
-                    "#smoke": "Smoke",
-                    "#ball": "Ball",
-                    "#paper": "Paper"
-                }
-            },
-            "#sprite": {
-                "$Text": "Sprite",
-                "#license": {
-                    "$Content": "All sprites listed below are ${LinkText} and free to use and modify.",
-                    "$LinkText": "copyright-free (CC0)"
-                },
-                "#sprite": {
-                    "#ball": "Ball",
-                    "#dirt": "Dirt",
-                    "#leaves": "Leaves",
-                    "#smoke": "Smoke",
-                    "#dust": "Dust",
-                    "#sparkle": "Sparkle",
-                    "#magic": "Magic"
-                },
-                "#random_rotation": "Random Rotation",
-                "#lighting": "Glow in the dark"
-            }
+            "$Text": "Quick Setup"
         },
         "#effect": {
             "$Text": "File",
@@ -581,6 +534,9 @@
             "Event ID": "Event ID",
             "Remove Event": "Remove Event"
         },
+        "EventPicker": {
+            "$Text": "No events available"
+        },
         "EventSubpart": {
             "#sequence": {
                 "$Text": "Sequence",
@@ -644,6 +600,86 @@
                 "Expression": "Expression",
                 "Sequence": "Sequence",
                 "Randomize": "Randomize"
+            }
+        },
+        "QuickSetup": {
+            "#shape_and_motion": {
+                "$Text": "Shape & Motion",
+                "#shape": {
+                    "#sphere": "Sphere",
+                    "#rain": "Rain",
+                    "#ring": "Ring",
+                    "#gravitate": "Gravitate to Center"
+                },
+                "#speed": "Speed"
+            },
+            "#timing": {
+                "$Text": "Timing",
+                "#timing": {
+                    "#burst": "Burst",
+                    "#steady": "Steady"
+                },
+                "#amount": "Amount",
+                "#particle_lifetime": "Particle Lifetime"
+            },
+            "#physics": {
+                "$Text": "Physics",
+                "#collision": {
+                    "#none": "None",
+                    "#solid": "Solid",
+                    "#smoke": "Smoke",
+                    "#ball": "Ball",
+                    "#paper": "Paper"
+                }
+            },
+            "#sprite": {
+                "$Text": "Sprite",
+                "#license": {
+                    "$Content": "All sprites listed below are ${LinkText} and free to use and modify.",
+                    "$LinkText": "copyright-free (CC0)"
+                },
+                "#sprite": {
+                    "#ball": "Ball",
+                    "#dirt": "Dirt",
+                    "#leaves": "Leaves",
+                    "#smoke": "Smoke",
+                    "#dust": "Dust",
+                    "#sparkle": "Sparkle",
+                    "#magic": "Magic"
+                },
+                "#random_rotation": "Random Rotation",
+                "#lighting": "Glow in the dark"
+            }
+        },
+        "TextureInput": {
+            "#toolbar": {
+                "#select": "Select",
+                "#brush": "Brush",
+                "#eraser": "Eraser",
+                "#fill_tool": "Paint Bucket",
+                "#color_picker": "Color Picker",
+                "#reload_texture": "Reload Texture",
+                "#new_texture": "New Texture",
+                "#save_texture": "Save"
+            },
+            "#undo_controls": {
+                "#undo": "Undo",
+                "#redo": "Redo"
+            },
+            "#texture_viewport": {
+                "#uv_perimeter_preview": "UV Perimeter",
+                "#uv_sample_preview": "UV Sample"
+            },
+            "#texture_info_bar": {
+                "#previous": "Previous Frame",
+                "#next": "Next Frame",
+                "#maximize": "Center Viewport"
+            },
+            "#new_texture_dialog": {
+                "Width": "Width",
+                "Height": "Height",
+                "Confirm": "Confirm",
+                "Cancel": "Cancel"
             }
         }
     }

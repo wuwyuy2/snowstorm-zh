@@ -1,124 +1,124 @@
 <template>
 	<div class="quick_setup">
 		<div class="input_group">
-			<h4>{{ $t('Sidebar.#setup.#shape_and_motion.$Text') }}</h4>
+			<h4>{{ $t('Sidebar.QuickSetup.#shape_and_motion.$Text') }}</h4>
 			<ul class="preset_option_list">
 				<li @click="set('shape', 'sphere')" :class="{selected: shape == 'sphere'}">
 					<Loader :size="38" :stroke-width="1" />
-					{{ $t('Sidebar.#setup.#shape_and_motion.#shape.#sphere') }}
+					{{ $t('Sidebar.QuickSetup.#shape_and_motion.#shape.#sphere') }}
 				</li>
 				<li @click="set('shape', 'rain')" :class="{selected: shape == 'rain'}">
 					<CloudRain :size="38" :stroke-width="1" />
-					{{ $t('Sidebar.#setup.#shape_and_motion.#shape.#rain') }}
+					{{ $t('Sidebar.QuickSetup.#shape_and_motion.#shape.#rain') }}
 				</li>
 				<li @click="set('shape', 'ring')" :class="{selected: shape == 'ring'}">
 					<Torus :size="38" :stroke-width="1" />
-					{{ $t('Sidebar.#setup.#shape_and_motion.#shape.#ring') }}
+					{{ $t('Sidebar.QuickSetup.#shape_and_motion.#shape.#ring') }}
 				</li>
 				<li @click="set('shape', 'gravitate')" :class="{selected: shape == 'gravitate'}">
 					<Magnet :size="38" :stroke-width="1" />
-					{{ $t('Sidebar.#setup.#shape_and_motion.#shape.#gravitate') }}
+					{{ $t('Sidebar.QuickSetup.#shape_and_motion.#shape.#gravitate') }}
 				</li>
 			</ul>
 			<div class="input_bar">
-				<label>{{ $t('Sidebar.#setup.#shape_and_motion.#speed') }}</label>
+				<label>{{ $t('Sidebar.QuickSetup.#shape_and_motion.#speed') }}</label>
 				<input type="range" v-model="speed" min="0" max="20" step="0.5" >
 				<label class="range_number_label">{{ speed }}</label>
 			</div>
 		</div>
 
 		<div class="input_group">
-			<h4>{{ $t('Sidebar.#setup.#timing.$Text')}}</h4>
+			<h4>{{ $t('Sidebar.QuickSetup.#timing.$Text')}}</h4>
 			<ul class="preset_option_list">
 				<li @click="set('timing', 'burst')" :class="{selected: timing == 'burst'}">
 					<Bomb :size="38" :stroke-width="1" />
-					{{ $t('Sidebar.#setup.#timing.#timing.#burst') }}
+					{{ $t('Sidebar.QuickSetup.#timing.#timing.#burst') }}
 				</li>
 				<li @click="set('timing', 'steady')" :class="{selected: timing == 'steady'}">
 					<Timer :size="38" :stroke-width="1" />
-					{{ $t('Sidebar.#setup.#timing.#timing.#steady') }}
+					{{ $t('Sidebar.QuickSetup.#timing.#timing.#steady') }}
 				</li>
 			</ul>
 			<div class="input_bar">
-				<label>{{ $t('Sidebar.#setup.#timing.#amount') }}</label>
+				<label>{{ $t('Sidebar.QuickSetup.#timing.#amount') }}</label>
 				<input type="range" v-model="amount" min="1" max="120" step="1" >
 				<label class="range_number_label">{{ amount }}</label>
 			</div>
 			<div class="input_bar">
-				<label>{{ $t('Sidebar.#setup.#timing.#particle_lifetime') }}</label>
+				<label>{{ $t('Sidebar.QuickSetup.#timing.#particle_lifetime') }}</label>
 				<input type="range" v-model="particle_lifetime" min="0.1" max="10" step="0.1" >
 				<label class="range_number_label">{{ particle_lifetime }}</label>
 			</div>
 		</div>
 
 		<div class="input_group">
-			<h4>{{ $t('Sidebar.#setup.#physics.$Text')}}</h4>
+			<h4>{{ $t('Sidebar.QuickSetup.#physics.$Text')}}</h4>
 			<ul class="preset_option_list">
 				<li @click="set('collision', 'none')" :class="{selected: collision == 'none'}">
 					<CircleSlash :size="38" :stroke-width="1" />
-					{{ $t('Sidebar.#setup.#physics.#collision.#none') }}
+					{{ $t('Sidebar.QuickSetup.#physics.#collision.#none') }}
 				</li>
 				<li @click="set('collision', 'solid')" :class="{selected: collision == 'solid'}">
 					<Cuboid :size="38" :stroke-width="1" />
-					{{ $t('Sidebar.#setup.#physics.#collision.#solid') }}
+					{{ $t('Sidebar.QuickSetup.#physics.#collision.#solid') }}
 				</li>
 				<li @click="set('collision', 'smoke')" :class="{selected: collision == 'smoke'}">
 					<Cloud :size="38" :stroke-width="1" />
-					{{ $t('Sidebar.#setup.#physics.#collision.#smoke') }}
+					{{ $t('Sidebar.QuickSetup.#physics.#collision.#smoke') }}
 				</li>
 				<li @click="set('collision', 'ball')" :class="{selected: collision == 'ball'}">
 					<Aperture :size="38" :stroke-width="1" />
-					{{ $t('Sidebar.#setup.#physics.#collision.#ball') }}
+					{{ $t('Sidebar.QuickSetup.#physics.#collision.#ball') }}
 				</li>
 				<li @click="set('collision', 'paper')" :class="{selected: collision == 'paper'}">
 					<Scroll :size="38" :stroke-width="1" />
-					{{ $t('Sidebar.#setup.#physics.#collision.#paper') }}
+					{{ $t('Sidebar.QuickSetup.#physics.#collision.#paper') }}
 				</li>
 			</ul>
 		</div>
 
 		<div class="input_group">
 			<h4>
-				{{ $t('Sidebar.#setup.#sprite.$Text') }}
+				{{ $t('Sidebar.QuickSetup.#sprite.$Text') }}
 				<CreativeCommons :size="20" @click="show_sprite_license = !show_sprite_license" />
 			</h4>
 			<p style="padding: 2px 12px;" v-if="show_sprite_license" v-html="license"></p>
 			<ul class="preset_option_list">
 				<li @click="set('sprite', 'ball')" :class="{selected: sprite == 'ball'}">
 					<img :src="sprites.SpriteBall" height="45" />
-					{{ $t('Sidebar.#setup.#sprite.#sprite.#ball') }}
+					{{ $t('Sidebar.QuickSetup.#sprite.#sprite.#ball') }}
 				</li>
 				<li @click="set('sprite', 'dirt')" :class="{selected: sprite == 'dirt'}">
 					<img :src="sprites.SpriteDirt" height="45" />
-					{{ $t('Sidebar.#setup.#sprite.#sprite.#dirt') }}
+					{{ $t('Sidebar.QuickSetup.#sprite.#sprite.#dirt') }}
 				</li>
 				<li @click="set('sprite', 'leaves')" :class="{selected: sprite == 'leaves'}">
 					<img :src="sprites.SpriteLeaves" height="45" />
-					{{ $t('Sidebar.#setup.#sprite.#sprite.#leaves') }}
+					{{ $t('Sidebar.QuickSetup.#sprite.#sprite.#leaves') }}
 				</li>
 				<li @click="set('sprite', 'smoke')" :class="{selected: sprite == 'smoke'}">
 					<img :src="sprites.SpriteSmoke" height="45" class="frames_8" />
-					{{ $t('Sidebar.#setup.#sprite.#sprite.#smoke') }}
+					{{ $t('Sidebar.QuickSetup.#sprite.#sprite.#smoke') }}
 				</li>
 				<li @click="set('sprite', 'dust')" :class="{selected: sprite == 'dust'}">
 					<img :src="sprites.SpriteDust" height="45" class="frames_8" />
-					{{ $t('Sidebar.#setup.#sprite.#sprite.#dust') }}
+					{{ $t('Sidebar.QuickSetup.#sprite.#sprite.#dust') }}
 				</li>
 				<li @click="set('sprite', 'sparkle')" :class="{selected: sprite == 'sparkle'}">
 					<img :src="sprites.SpriteSparkle" height="45" class="frames_4" />
-					{{ $t('Sidebar.#setup.#sprite.#sprite.#sparkle') }}
+					{{ $t('Sidebar.QuickSetup.#sprite.#sprite.#sparkle') }}
 				</li>
 				<li @click="set('sprite', 'magic')" :class="{selected: sprite == 'magic'}">
 					<img :src="sprites.SpriteMagic" height="45" class="frames_8" />
-					{{ $t('Sidebar.#setup.#sprite.#sprite.#magic') }}
+					{{ $t('Sidebar.QuickSetup.#sprite.#sprite.#magic') }}
 				</li>
 			</ul>
 			<div class="input_bar">
-				<label for="quick_rotation_checkbox">{{ $t('Sidebar.#setup.#sprite.#random_rotation') }}</label>
+				<label for="quick_rotation_checkbox">{{ $t('Sidebar.QuickSetup.#sprite.#random_rotation') }}</label>
 				<checkbox id="quick_rotation_checkbox" v-model="random_rotation" />
 			</div>
 			<div class="input_bar">
-				<label for="quick_lighting_checkbox">{{ $t('Sidebar.#setup.#sprite.#lighting') }}</label>
+				<label for="quick_lighting_checkbox">{{ $t('Sidebar.QuickSetup.#sprite.#lighting') }}</label>
 				<checkbox id="quick_lighting_checkbox" v-model="lighting" />
 			</div>
 		</div>
@@ -425,8 +425,8 @@ export default {
 	},
 	computed: {
 		license() {
-			let content = this.$t('Sidebar.#setup.#sprite.#license.$Content')
-			let linkText = this.$t('Sidebar.#setup.#sprite.#license.$LinkText')
+			let content = this.$t('Sidebar.QuickSetup.#sprite.#license.$Content')
+			let linkText = this.$t('Sidebar.QuickSetup.#sprite.#license.$LinkText')
 			linkText = `<a href="https://creativecommons.org/publicdomain/zero/1.0/"
 					target="_blank" rel="noopener noreferrer">${linkText}</a>`
 			return content.replace("${LinkText}", linkText)

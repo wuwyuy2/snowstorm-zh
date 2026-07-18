@@ -1,28 +1,28 @@
 <template>
 	<div class="texture_input" :tool="tool">
 		<div class="toolbar">
-			<div class="tool" @click="selectTool('select')" :class="{selected: tool == 'select'}" title="Select">
-				<MousePointer />
+			<div class="tool" @click="selectTool('select')" :class="{selected: tool == 'select'}"
+				:title="$t('Sidebar.TextureInput.#toolbar.#select')"><MousePointer />
 			</div>
-			<div class="tool" @click="selectTool('brush')" :class="{selected: tool == 'brush'}" title="Brush">
-				<Brush />
+			<div class="tool" @click="selectTool('brush')" :class="{selected: tool == 'brush'}"
+				:title="$t('Sidebar.TextureInput.#toolbar.#brush')"><Brush />
 			</div>
-			<div class="tool" @click="selectTool('eraser')" :class="{selected: tool == 'eraser'}" title="Eraser">
-				<Eraser />
+			<div class="tool" @click="selectTool('eraser')" :class="{selected: tool == 'eraser'}"
+				:title="$t('Sidebar.TextureInput.#toolbar.#eraser')"><Eraser />
 			</div>
-			<div class="tool" @click="selectTool('fill_tool')" :class="{selected: tool == 'fill_tool'}" title="Paint Bucket">
-				<PaintBucket />
+			<div class="tool" @click="selectTool('fill_tool')" :class="{selected: tool == 'fill_tool'}"
+				:title="$t('Sidebar.TextureInput.#toolbar.#fill_tool')"><PaintBucket />
 			</div>
-			<div class="tool" @click="selectTool('color_picker')" :class="{selected: tool == 'color_picker'}" title="Color Picker">
-				<Pipette />
+			<div class="tool" @click="selectTool('color_picker')" :class="{selected: tool == 'color_picker'}"
+				:title="$t('Sidebar.TextureInput.#toolbar.#color_picker')"><Pipette />
 			</div>
 
 			<span class="undo_controls">
-				<div class="tool" @click="Texture.undo()" title="Undo">
-					<Undo />
+				<div class="tool" @click="Texture.undo()"
+					:title="$t('Sidebar.TextureInput.#undo_controls.#undo')"><Undo />
 				</div>
-				<div class="tool" @click="Texture.redo()" title="Redo">
-					<Redo />
+				<div class="tool" @click="Texture.redo()"
+					:title="$t('Sidebar.TextureInput.#undo_controls.#redo')"><Redo />
 				</div>
 			</span>
 
@@ -51,9 +51,11 @@
 			>
 				<div id="canvas_wrapper" ref="canvas_wrapper"></div>
 				<template v-if="UVDefinitionMode() != 'full'">
-					<div class="uv_preview uv_perimeter_preview" title="UV Perimeter" @pointerdown="dragUV($event)" :style="calculateUVPerimeter()"></div>
-					<div class="uv_preview uv_sample_preview" title="UV Sample" @pointerdown="dragUV($event)" :style="calculateUVSample()">
-						<div class="uv_preview_size_handle" @pointerdown.stop="dragUV($event, true)" v-if="tool == 'select'" />
+					<div class="uv_preview uv_perimeter_preview" @pointerdown="dragUV($event)" :style="calculateUVPerimeter()"
+						:title="$t('Sidebar.TextureInput.#texture_viewport.#uv_perimeter_preview')"></div>
+					<div class="uv_preview uv_sample_preview" @pointerdown="dragUV($event)" :style="calculateUVSample()"
+						:title="$t('Sidebar.TextureInput.#texture_viewport.#uv_sample_preview')">
+						<div class="uv_preview_size_handle" @pointerdown.stop="dragUV($event, true)" v-if="tool == 'select'"></div>
 					</div>
 				</template>
 				<div v-if="cursor_position.active && ['brush', 'eraser', 'color_picker'].includes(tool)" id="brush_outline" :style="getBrushOutlineStyle()"></div>
@@ -66,14 +68,14 @@
 			<div class="info">{{ cursor_position.active ? (cursor_position.x + ' x ' + cursor_position.y) : '' }}</div>
 			<div class="info">{{ Math.round(zoom * 100) + '%' }}</div>
 			<template v-if="UVDefinitionMode() == 'animated'">
-				<div class="tool" @click="moveByFrame(-1)" title="Previous Frame">
+				<div class="tool" @click="moveByFrame(-1)" :title="$t('Sidebar.TextureInput.#texture_info_bar.#previous')">
 					<ArrowBigLeft :size="20" />
 				</div>
-				<div class="tool" @click="moveByFrame(1)" title="Next Frame">
+				<div class="tool" @click="moveByFrame(1)" :title="$t('Sidebar.TextureInput.#texture_info_bar.#next')">
 					<ArrowBigRight :size="20" />
 				</div>
 			</template>
-			<div class="tool" @click="maximizeViewport()" title="Center Viewport">
+			<div class="tool" @click="maximizeViewport()" :title="$t('Sidebar.TextureInput.#texture_info_bar.#maximize')">
 				<Maximize :size="20" />
 			</div>
 		</div>
@@ -83,23 +85,29 @@
 				<div class="tool" v-on:click="Texture.reset()"><X /></div>
 				<input id="particle-texture-image" type="file" style="margin-top: 5px;" accept=".png" v-on:change="input.change($event)">
 			</template>
-			<div class="tool" v-if="!input.allow_upload" @click="reloadTexture()" title="Reload Texture">
-				<RefreshCcw />
+			<div class="tool" v-if="!input.allow_upload" @click="reloadTexture()"
+				:title="$t('Sidebar.TextureInput.#toolbar.#reload_texture')"><RefreshCcw />
 			</div>
-			<div class="tool" @click="newTexture()" title="New Texture">
-				<PlusSquare />
+			<div class="tool" @click="newTexture()"
+				:title="$t('Sidebar.TextureInput.#toolbar.#new_texture')"><PlusSquare />
 			</div>
-			<div class="tool" v-if="Texture.internal_changes" @click="saveTexture()" title="Save">
-				<Save />
+			<div class="tool" v-if="Texture.internal_changes" @click="saveTexture()"
+				:title="$t('Sidebar.TextureInput.#toolbar.#save_texture')"><Save />
 			</div>
 		</div>
 
 		<dialog id="new_texture_dialog" ref="new_texture_dialog" class="modal_dialog">
-			<div class="form_bar"><label>Width</label><input type="number" v-model.number="new_texture_size[0]"></div>
-			<div class="form_bar"><label>Height</label><input type="number" v-model.number="new_texture_size[1]"></div>
+			<div class="form_bar">
+				<label>{{ $t('Sidebar.TextureInput.#new_texture_dialog.Width') }}</label>
+				<input type="number" v-model.number="new_texture_size[0]">
+			</div>
+			<div class="form_bar">
+				<label>{{ $t('Sidebar.TextureInput.#new_texture_dialog.Height') }}</label>
+				<input type="number" v-model.number="new_texture_size[1]">
+			</div>
 			<div class="button_bar">
-				<button @click="newTextureConfirm()">Confirm</button>
-				<button @click="$refs.new_texture_dialog.close()">Cancel</button>
+				<button @click="newTextureConfirm()">{{ $t('Sidebar.TextureInput.#new_texture_dialog.Confirm') }}</button>
+				<button @click="$refs.new_texture_dialog.close()">{{ $t('Sidebar.TextureInput.#new_texture_dialog.Cancel') }}</button>
 			</div>
 		</dialog>
 	</div>

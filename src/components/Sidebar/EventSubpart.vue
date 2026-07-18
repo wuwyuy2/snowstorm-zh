@@ -379,8 +379,8 @@ export default {
 	.add_button {
 		margin-left: auto;
 	}
-	.remove_button {
-	}
+	/* .remove_button {
+	} */
 	.subpart_option_head_bar {
 		display: flex;
 	}
