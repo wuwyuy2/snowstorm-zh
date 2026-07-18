@@ -2,7 +2,8 @@
 	<div id="help_panel" :class="{portrait_view: portrait_view}">
 		<div class="help_header">
 			<X class="close_button highlighting_button" v-if="!portrait_view" :size="22" @click="$emit('close')" />
-			<a class="back_button" v-if="category_key" @click="openPage('', '')"><ChevronLeft :size="20" /> Back to overview</a>
+			<a class="back_button" v-if="category_key" @click="openPage('', '')"
+				><ChevronLeft :size="20" /> {{ $t('HelpPanel.#back_button.$Text') }}</a>
 		</div>
 
 		<content ref="content">

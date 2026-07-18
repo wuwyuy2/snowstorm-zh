@@ -1,5 +1,13 @@
 {
-    "Menu": {
+    "CodeViewer": {
+        "Copy": "Copy"
+    },
+    "HelpPanel": {
+        "#back_button": {
+            "$Text": "Back to overview"
+        }
+    },
+    "MenuBar": {
         "File": {
             "$Title": "File",
             "New File": "New File",
@@ -24,6 +32,10 @@
             "Axis Helper": "Axis Helper",
             "Take Screenshot": "Take Screenshot"
         },
+        "Language": {
+            "$Title": "Language",
+            "en": "English"
+        },
         "Help": {
             "$Title": "Help",
             "Open Documentation": "Open Documentation",
@@ -40,6 +52,41 @@
         "Switch to Code": "Switch to Code",
         "Code": "Code",
         "Preview": "Preview"
+    },
+    "Preview": {
+        "#show_placeholder_bar": {
+            "$Description": "Bake variable value into all expressions.",
+            "#no_placeholder": "No undefined variables found"
+        },
+        "#hide_placeholder_bar": {
+            "$Description": "Hide Variable Placeholder Bar."
+        },
+        "#loop_mode": {
+            "#auto": "Auto",
+            "#looping": "Looping",
+            "#once": "Once"
+        },
+        "#parent_mode": {
+            "#world": "World",
+            "#entity": "Entity",
+            "#locator": "Locator"
+        },
+        "#toggle_collision": {
+            "$Description": "Preview Collisions"
+        },
+        "#toggle_placeholder_bar": {
+            "$Description": "Show Variable Placeholder Bar"
+        },
+        "#start_animation": {
+            "$Description": "Play"
+        },
+        "#pause_animation": {
+            "$Description": "Pause"
+        },
+        "#button_bar": {
+            "Confirm": "Confirm",
+            "Cancel": "Cancel"
+        }
     },
     "Sidebar": {
         "#setup": {
@@ -530,12 +577,15 @@
                 }
             }
         },
+        "#test_quick_setup_button": {
+            "$Text": "Quick Setup"
+        },
         "EventList": {
             "Event ID": "Event ID",
             "Remove Event": "Remove Event"
         },
         "EventPicker": {
-            "$Text": "No events available"
+            "#no_events_available": "No events available"
         },
         "EventSubpart": {
             "#sequence": {

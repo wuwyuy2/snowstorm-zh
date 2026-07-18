@@ -48,7 +48,7 @@
 			<div class="input_group" v-if="selected_subject_key == 'effect'">
 				<button id="test_quick_setup_button" @click="selectSubject('setup')">
 					<Wand />
-					Quick Setup
+					{{ $t('Sidebar.#test_quick_setup_button.$Text') }}
 				</button>
 			</div>
 

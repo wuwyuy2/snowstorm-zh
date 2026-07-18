@@ -10,7 +10,7 @@
 				{{ option }}
 			</li>
 			<template v-if="getEventIDs().length == 0">
-				{{ $t('Sidebar.EventPicker.$Text') }}
+				{{ $t('Sidebar.EventPicker.#no_events_available') }}
 			</template>
 		</ul>
 	</div>

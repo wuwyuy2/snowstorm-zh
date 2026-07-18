@@ -11,8 +11,8 @@
             </svg>
             <ul class="curve_controls" v-if="curve.config.mode !== 'bezier_chain'">
                 <li class="curve_add" v-if="curve.config.mode !== 'bezier'" :key="'add_0'" @click="addNode(0, $event)"></li>
-                <template v-for="(value, index) in curve.nodes" :key="'node_'+index">
-                    <li class="curve_node" :class="{selected: curve.selected_point == index}" @mousedown="slideValue(index, $event)" @touchstart="slideValue(index, $event); simulateHover($event)">
+                <template v-for="(value, index) in curve.nodes">
+                    <li class="curve_node" :class="{selected: curve.selected_point == index}" :key="'node_'+index" @mousedown="slideValue(index, $event)" @touchstart="slideValue(index, $event); simulateHover($event)">
                         <div class="curve_point"
 							v-show="value <= 256 && value >= -256"
 							:style="{bottom: ((value-curve.min)/(curve.max-curve.min))*height + 'px'}">

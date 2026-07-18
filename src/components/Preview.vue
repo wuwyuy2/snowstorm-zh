@@ -8,43 +8,46 @@
                     <li v-for="(key) in placeholder_keys" :key="key">
                         <label :for="'placeholder_'+key">{{ key.replace(key.substring(1, key.indexOf('.')), '') }}</label>
                         <input type="number" :id="'placeholder_'+key" :value="placeholder_values[key] || 0" @input="updatePlaceholderValue(key, $event)">
-                        <div class="tool" v-if="key.startsWith('variable')" @click="bakePlaceholderVariable(key)" title="Bake variable value into all expressions">
+                        <div class="tool" v-if="key.startsWith('variable')" @click="bakePlaceholderVariable(key)"
+                            :title="$t('Preview.#show_placeholder_bar.$Description')">
                             <CheckCheck :size="20" />
                         </div>
                     </li>
-                    <li v-if="placeholder_keys.length == 0"><label>No undefined variables found</label></li>
+                    <li v-if="placeholder_keys.length == 0"><label>{{ $t('Preview.#show_placeholder_bar.#no_placeholder') }}</label></li>
                 </ul>
 
-                <div class="tool" @click="hidePlaceholderBar()" title="Hide Variable Placeholder Bar">
+                <div class="tool" @click="hidePlaceholderBar()" :title="$t('Preview.#hide_placeholder_bar.$Description')">
                     <X :size="22" />
                 </div>
             </div>
         </div>
         <footer>
             <select id="loop_mode" v-model="loop_mode" @change="changeLoopMode()">
-                <option value="auto">Auto</option>
-                <option value="looping">Looping</option>
-                <option value="once">Once</option>
+                <option value="auto">{{ ($t('Preview.#loop_mode.#auto')) }}</option>
+                <option value="looping">{{ ($t('Preview.#loop_mode.#looping')) }}</option>
+                <option value="once">{{ ($t('Preview.#loop_mode.#once')) }}</option>
             </select>
             <select id="parent_mode" v-model="parent_mode" @change="changeParentMode()">
-                <option value="world">World</option>
-                <option value="entity">Entity</option>
-                <option value="locator">Locator</option>
+                <option value="world">{{ ($t('Preview.#parent_mode.#world')) }}</option>
+                <option value="entity">{{ ($t('Preview.#parent_mode.#entity')) }}</option>
+                <option value="locator">{{ ($t('Preview.#parent_mode.#locator')) }}</option>
             </select>
-            <div class="tool ground_collision" :class="{toggle_enabled: collision}" @click="toggleCollision()" title="Preview Collisions">
+            <div class="tool ground_collision" :class="{toggle_enabled: collision}" @click="toggleCollision()"
+                :title="$t('Preview.#toggle_collision.$Description')">
                 <FlipVertical2 :size="20" v-if="collision" />
                 <Minus :size="20" v-else />
             </div>
-            <div class="tool" :class="{toggle_enabled: show_placeholder_bar}" @click="show_placeholder_bar ? hidePlaceholderBar() : showPlaceholderBar()" title="Show Variable Placeholder Bar">
+            <div class="tool" :class="{toggle_enabled: show_placeholder_bar}" @click="show_placeholder_bar ? hidePlaceholderBar() : showPlaceholderBar()"
+                :title="$t('Preview.#toggle_placeholder_bar.$Description')">
                 <Hash :size="22" />
             </div>
 
             <div class="spacing" />
 
-            <div class="tool" @click="startAnimation()" title="Play">
+            <div class="tool" @click="startAnimation()" :title="$t('Preview.#start_animation.$Description')">
                 <Play :size="22" />
             </div>
-            <div class="tool" @click="togglePause()" title="Pause">
+            <div class="tool" @click="togglePause()" :title="$t('Preview.#pause_animation.$Description')">
                 <Pause :size="22" />
             </div>
 
@@ -58,8 +61,8 @@
         <dialog id="bake_placeholder_confirm_dialog" ref="bake_placeholder_confirm_dialog" class="modal_dialog" style="max-width: 308px;">
             <div class="form_bar">Do you want to replace all occurrences of '{{ bake_placeholder_key }}' with the value '{{ placeholder_values[bake_placeholder_key] }}'?</div>
             <div class="button_bar">
-                <button @click="bakePlaceholderVariableConfirm()">Confirm</button>
-                <button @click="$refs.bake_placeholder_confirm_dialog.close()">Cancel</button>
+                <button @click="bakePlaceholderVariableConfirm()">{{ $t('Preview.#button_bar.Confirm') }}</button>
+                <button @click="$refs.bake_placeholder_confirm_dialog.close()">{{ $t('Preview.#button_bar.Cancel') }}</button>
             </div>
         </dialog>
     </main>
