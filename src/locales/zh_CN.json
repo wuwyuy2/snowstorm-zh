@@ -144,9 +144,9 @@
             },
             "#lifetime": {
                 "$Text": "发射器生命周期",
-                "$Description": "",
                 "#mode": {
                     "$Text": "模式",
+                    "$Description": "",
                     "$Options": {
                         "#looping": "无限循环",
                         "#once": "仅一次",
@@ -172,9 +172,9 @@
             },
             "#shape": {
                 "$Text": "生成形状",
-                "$Description": "",
                 "#mode": {
                     "$Text": "模式",
+                    "$Description": "",
                     "$Options": {
                         "#point": "点状",
                         "#sphere": "球体",
@@ -209,9 +209,9 @@
             "$Text": "运动",
             "#motion": {
                 "$Text": "运动",
-                "$Description": "",
                 "#mode": {
                     "$Text": "模式",
+                    "$Description": "",
                     "$Options": {
                         "#dynamic": "动态",
                         "#parametric": "参数化",
@@ -254,9 +254,9 @@
             },
             "#rotation": {
                 "$Text": "旋转",
-                "$Description": "",
                 "#mode": {
                     "$Text": "模式",
+                    "$Description": "",
                     "$Options": {
                         "#dynamic": "动态",
                         "#parametric": "参数化"
@@ -374,9 +374,9 @@
             },
             "#color": {
                 "$Text": "颜色",
-                "$Description": "",
                 "#mode": {
                     "$Text": "填充",
+                    "$Description": "",
                     "$Options": {
                         "#static": "静态",
                         "#gradient": "渐变",
@@ -412,6 +412,9 @@
                 "#path": {
                     "$Text": "路径",
                     "$Description": "Path to the texture, starting from the texture pack. Example: textures/particle/snowflake."
+                },
+                "#image": {
+                    "$Description": ""
                 }
             },
             "#uv": {

@@ -149,6 +149,7 @@
                 "$Description": "",
                 "#mode": {
                     "$Text": "Mode",
+                    "$Description": "",
                     "$Options": {
                         "#looping": "Looping",
                         "#once": "Once",
@@ -174,9 +175,9 @@
             },
             "#shape": {
                 "$Text": "Spawn Shape",
-                "$Description": "",
                 "#mode": {
                     "$Text": "Mode",
+                    "$Description": "",
                     "$Options": {
                         "#point": "Point",
                         "#sphere": "Sphere",
@@ -211,9 +212,9 @@
             "$Text": "Motion",
             "#motion": {
                 "$Text": "Motion",
-                "$Description": "",
                 "#mode": {
                     "$Text": "Mode",
+                    "$Description": "",
                     "$Options": {
                         "#dynamic": "Dynamic",
                         "#parametric": "Parametric",
@@ -256,9 +257,9 @@
             },
             "#rotation": {
                 "$Text": "Rotation",
-                "$Description": "",
                 "#mode": {
                     "$Text": "Mode",
+                    "$Description": "",
                     "$Options": {
                         "#dynamic": "Dynamic",
                         "#parametric": "Parametric"
@@ -376,9 +377,9 @@
             },
             "#color": {
                 "$Text": "Color",
-                "$Description": "",
                 "#mode": {
                     "$Text": "Color Mode",
+                    "$Description": "",
                     "$Options": {
                         "#static": "Static",
                         "#gradient": "Gradient",
@@ -414,6 +415,9 @@
                 "#path": {
                     "$Text": "Texture",
                     "$Description": "Path to the texture, starting from the texture pack. Example: textures/particle/snowflake."
+                },
+                "#image": {
+                    "$Description": ""
                 }
             },
             "#uv": {
