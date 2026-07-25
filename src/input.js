@@ -199,7 +199,7 @@ export default class Input {
 			if (this.type === 'select_custom' && !this.options[this.value]) {
 				this.meta_value = this.options.custom;
 			} else {
-				this.meta_value = this.options[this.value];
+				this.meta_value = this.value; // this.options[this.value];
 			}
 		} else {
 			if (this.value instanceof Array) {
