@@ -1,0 +1,3 @@
+[submodule "third/snowstorm-prism-editor"]
+	path = third/snowstorm-prism-editor
+	url = https://github.com/JannisX11/vue-prism-editor.git
