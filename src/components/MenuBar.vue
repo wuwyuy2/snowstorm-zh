@@ -94,6 +94,7 @@ const Menu = [
 		label: 'Language',
 		children: [
 			{label: 'en', click: () => { setLocale('en') }},
+			{label: 'zh_CN', click: () => { setLocale('zh_CN') }},
 		]
 	},
 	{

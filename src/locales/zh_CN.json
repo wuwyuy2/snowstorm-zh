@@ -1,343 +1,341 @@
 {
     "CodeViewer": {
-        "Copy": "Copy"
+        "Copy": "复制"
     },
     "HelpPanel": {
         "#back_button": {
-            "$Text": "Back to overview"
+            "$Text": "返回目录"
         }
     },
     "MenuBar": {
         "File": {
-            "$Title": "File",
-            "New File": "New File",
-            "Import": "Import",
-            "Download": "Download"
+            "$Title": "文件",
+            "New File": "新建",
+            "Import": "导入",
+            "Download": "下载"
         },
         "Examples": {
-            "$Title": "Examples",
-            "Loading": "Loading",
-            "Rainbow": "Rainbow",
-            "Rain": "Rain",
-            "Snow": "Snow",
-            "Fire": "Fire",
-            "Magic": "Magic",
-            "Trail": "Trail",
-            "Billboard": "Billboard"
+            "$Title": "示例",
+            "Loading": "转圈",
+            "Rainbow": "彩虹",
+            "Rain": "降雨",
+            "Snow": "降雪",
+            "Fire": "火焰",
+            "Magic": "魔法",
+            "Trail": "拖尾",
+            "Billboard": "告示牌"
         },
         "View": {
-            "$Title": "View",
-            "Grid": "Grid",
-            "Reference Block": "Reference Block",
-            "Axis Helper": "Axis Helper",
-            "Take Screenshot": "Take Screenshot"
+            "$Title": "视图",
+            "Grid": "网格",
+            "Reference Block": "参考方块",
+            "Axis Helper": "坐标轴",
+            "Take Screenshot": "截图"
         },
         "Language": {
-            "$Title": "Language",
-            "en": "English",
-            "zh_CN": "简体中文"
+            "$Title": "语言"
         },
         "Help": {
-            "$Title": "Help",
-            "Open Documentation": "Open Documentation",
-            "Molang Reference": "Molang Reference",
-            "Snowstorm Tutorial": "Snowstorm Tutorial",
-            "Tutorial Video": "Tutorial Video",
-            "Format Documentation": "Format Documentation",
-            "Molang Grapher": "Molang Grapher",
-            "Report a Bug": "Report a Bug",
-            "Discord Server": "Discord Server"
+            "$Title": "帮助",
+            "Open Documentation": "文档",
+            "Molang Reference": "Molang 参考",
+            "Snowstorm Tutorial": "教程",
+            "Tutorial Video": "视频教程",
+            "Format Documentation": "文档格式",
+            "Molang Grapher": "Molang 数学工具",
+            "Report a Bug": "报告漏洞",
+            "Discord Server": "Discord 服务器"
         },
-        "Documentation": "Documentation",
-        "Share": "Share",
-        "Switch to Code": "Switch to Code",
-        "Code": "Code",
-        "Preview": "Preview"
+        "Documentation": "文档",
+        "Share": "分享",
+        "Switch to Code": "转到代码",
+        "Code": "代码",
+        "Preview": "预览"
     },
     "Preview": {
         "#show_placeholder_bar": {
-            "$Description": "Bake variable value into all expressions.",
-            "#no_placeholder": "No undefined variables found"
+            "$Description": "将查询变量应用到所有表达式中",
+            "#no_placeholder": "暂未检测到类似 query.xxx 的查询变量"
         },
         "#hide_placeholder_bar": {
-            "$Description": "Hide Variable Placeholder Bar."
+            "$Description": "隐藏查询变量栏"
         },
         "#loop_mode": {
-            "#auto": "Auto",
-            "#looping": "Looping",
-            "#once": "Once"
+            "#auto": "自动",
+            "#looping": "循环",
+            "#once": "单次"
         },
         "#parent_mode": {
-            "#world": "World",
-            "#entity": "Entity",
-            "#locator": "Locator"
+            "#world": "世界坐标",
+            "#entity": "本地坐标",
+            "#locator": "骨骼锚点"
         },
         "#toggle_collision": {
-            "$Description": "Preview Collisions"
+            "$Description": "预览碰撞效果"
         },
         "#toggle_placeholder_bar": {
-            "$Description": "Show Variable Placeholder Bar"
+            "$Description": "显示 query.xxx 查询变量栏"
         },
         "#start_animation": {
-            "$Description": "Restart"
+            "$Description": "重新播放"
         },
         "#pause_animation": {
-            "$Description": "Play/Pause"
+            "$Description": "播放/暂停"
         },
         "#button_bar": {
-            "Confirm": "Confirm",
-            "Cancel": "Cancel"
+            "Confirm": "确认",
+            "Cancel": "取消"
         }
     },
     "Sidebar": {
         "#setup": {
-            "$Text": "Quick Setup"
+            "$Text": "快速设置"
         },
         "#effect": {
-            "$Text": "File",
+            "$Text": "文件",
             "#meta": {
-                "$Text": "File",
+                "$Text": "文件",
                 "#identifier": {
-                    "$Text": "Identifier",
-                    "$Description": "This is the name the particle emitter is referred to as. Should have a namespace."
+                    "$Text": "标识符",
+                    "$Description": "在游戏中的唯一名称"
                 }
             },
             "#space": {
-                "$Text": "Space",
+                "$Text": "空间",
                 "#local_position": {
-                    "$Text": "Local Position",
-                    "$Description": "When enabled and the effect is attached to an entity, the particles will simulate in entity space."
+                    "$Text": "相对位置",
+                    "$Description": "启用后，当附加到实体上时，粒子将使用本地坐标系"
                 },
                 "#local_rotation": {
-                    "$Text": "Local Rotation",
-                    "$Description": "When enabled and the effect is attached to an entity, the particle rotation will simulate in entity space. Only works if local position is enabled too."
+                    "$Text": "相对旋转",
+                    "$Description": "启用后，当附加到实体上时，粒子将相对于本地坐标旋转。需启用相对位置才能生效。"
                 },
                 "#local_velocity": {
-                    "$Text": "Local Velocity",
-                    "$Description": "When enabled, the emitter's velocity will be added to the initial particle velocity."
+                    "$Text": "相对速度",
+                    "$Description": "启用后，发射器的速度将叠加到粒子初速度"
                 }
             }
         },
         "#emitter": {
-            "$Text": "Emitter",
+            "$Text": "发射器",
             "#rate": {
-                "$Text": "Spawn Amount",
+                "$Text": "生成数量",
                 "#mode": {
-                    "$Text": "Mode",
+                    "$Text": "模式",
                     "$Description": "",
                     "$Options": {
-                        "#steady": "Steady",
-                        "#instant": "Instant",
-                        "#manual": "Manual"
+                        "#steady": "持续不断生成",
+                        "#instant": "瞬间全部生成",
+                        "#manual": "手动控制"
                     }
                 },
                 "#rate": {
-                    "$Text": "Rate",
-                    "$Description": "How often a particle is emitted, in particles/second."
+                    "$Text": "生成速率",
+                    "$Description": "每秒生成的粒子数量"
                 },
                 "#amount": {
-                    "$Text": "Amount",
-                    "$Description": "How many particles are spawned at once."
+                    "$Text": "数量",
+                    "$Description": "一次性生成的粒子数量"
                 },
                 "#maximum": {
-                    "$Text": "Maximum",
-                    "$Description": "Maximum amount of particles that can be active before the emitter stops spawning new ones."
+                    "$Text": "最大数量",
+                    "$Description": "可同时存在的最大粒子数量"
                 }
             },
             "#lifetime": {
-                "$Text": "Emitter Lifetime",
+                "$Text": "发射器生命周期",
                 "$Description": "",
                 "#mode": {
-                    "$Text": "Mode",
+                    "$Text": "模式",
                     "$Options": {
-                        "#looping": "Looping",
-                        "#once": "Once",
-                        "#expression": "Expression"
+                        "#looping": "无限循环",
+                        "#once": "仅一次",
+                        "#expression": "Molang 表达式"
                     }
                 },
                 "#active_time": {
-                    "$Text": "Active Time",
-                    "$Description": "How long the emitter will be active for."
+                    "$Text": "活跃时长",
+                    "$Description": "发射器生成新粒子的时长"
                 },
                 "#sleep_time": {
-                    "$Text": "Sleep Time",
-                    "$Description": "How long the emitter will pause and not emit particles, when used in looping mode."
+                    "$Text": "休眠时长",
+                    "$Description": "在无限循环模式下，发射器暂停生成新粒子的时长"
                 },
                 "#activation": {
-                    "$Text": "Activation",
-                    "$Description": "When the expression is non-zero, the emitter will start emitting particles."
+                    "$Text": "激活条件",
+                    "$Description": "当表达式非零时，发射器开始生成粒子"
                 },
                 "#expiration": {
-                    "$Text": "Expiration",
-                    "$Description": "Emitter will expire if the expression is non-zero."
+                    "$Text": "销毁条件",
+                    "$Description": "当表达式非零时，发射器停止生成粒子"
                 }
             },
             "#shape": {
-                "$Text": "Spawn Shape",
+                "$Text": "生成形状",
                 "$Description": "",
                 "#mode": {
-                    "$Text": "Mode",
+                    "$Text": "模式",
                     "$Options": {
-                        "#point": "Point",
-                        "#sphere": "Sphere",
-                        "#box": "Box",
-                        "#disc": "Disc",
-                        "#entity_aabb": "Entity Bounding Box"
+                        "#point": "点状",
+                        "#sphere": "球体",
+                        "#box": "立方体",
+                        "#disc": "圆盘",
+                        "#entity_aabb": "实体碰撞箱"
                     }
                 },
                 "#offset": {
-                    "$Text": "Offset",
-                    "$Description": "Specifies the offset from the emitter to emit each particle."
+                    "$Text": "偏移",
+                    "$Description": "每个粒子相对于发射器的偏移位置"
                 },
                 "#radius": {
-                    "$Text": "Radius",
-                    "$Description": "Sphere or disc radius."
+                    "$Text": "半径",
+                    "$Description": "球体或圆盘的半径"
                 },
                 "#half_dimensions": {
-                    "$Text": "Box Size",
-                    "$Description": "Half dimensions of the box formed around the emitter."
+                    "$Text": "尺寸",
+                    "$Description": "以发射器为中心的立方体的半宽、半高以及半深"
                 },
                 "#plane_normal": {
-                    "$Text": "Plane Normal",
-                    "$Description": "Specifies the normal of the disc plane, the disc will be perpendicular to this direction."
+                    "$Text": "方向",
+                    "$Description": "圆盘的法线方向"
                 },
                 "#surface_only": {
-                    "$Text": "Surface Only",
-                    "$Description": "Emit only from the surface of the shape."
+                    "$Text": "仅表面",
+                    "$Description": "只从形状的表面生成粒子"
                 }
             }
         },
         "#motion": {
-            "$Text": "Motion",
+            "$Text": "运动",
             "#motion": {
-                "$Text": "Motion",
+                "$Text": "运动",
                 "$Description": "",
                 "#mode": {
-                    "$Text": "Mode",
+                    "$Text": "模式",
                     "$Options": {
-                        "#dynamic": "Dynamic",
-                        "#parametric": "Parametric",
-                        "#static": "Static"
+                        "#dynamic": "动态",
+                        "#parametric": "参数化",
+                        "#static": "静态"
                     }
                 },
                 "#direction_mode": {
-                    "$Text": "Direction",
-                    "$Description": "The direction of emitted particles in regards to the emitter shape.",
+                    "$Text": "方向",
+                    "$Description": "相对于发射器形状的粒子生成方向",
                     "$Options": {
-                        "#outwards": "Outwards",
-                        "#inwards": "Inwards",
-                        "#direction": "Custom"
+                        "#outwards": "向外",
+                        "#inwards": "向内",
+                        "#direction": "自定义"
                     }
                 },
                 "#direction": {
-                    "$Text": "Direction",
-                    "$Description": "The dDirectionirection of emitted particles."
+                    "$Text": "方向",
+                    "$Description": "粒子生成方向"
                 },
                 "#linear_speed": {
-                    "$Text": "Speed",
-                    "$Description": "Starts the particle with a specified speed, using the direction specified by the emitter shape."
+                    "$Text": "初速度",
+                    "$Description": "粒子生成时的速度，单位方块每秒"
                 },
                 "#linear_acceleration": {
-                    "$Text": "Acceleration",
-                    "$Description": "The linear acceleration applied to the particle in blocks/sec/sec."
+                    "$Text": "加速度",
+                    "$Description": "粒子的线性加速度，单位方块每平方秒"
                 },
                 "#linear_drag_coefficient": {
-                    "$Text": "Linear Drag",
-                    "$Description": "Think of this as air-drag.  The higher the value, the more drag."
+                    "$Text": "阻力",
+                    "$Description": "类似空气阻力，值越大阻力越大"
                 },
                 "#relative_position": {
-                    "$Text": "Offset",
-                    "$Description": "Directly set the position relative to the emitter."
+                    "$Text": "偏移",
+                    "$Description": "相对于发射器的偏移位置"
                 },
                 "#relative_direction": {
-                    "$Text": "Direction",
-                    "$Description": "Directly set the 3d direction of the particle."
+                    "$Text": "方向",
+                    "$Description": "粒子运动方向"
                 }
             },
             "#rotation": {
-                "$Text": "Rotation",
+                "$Text": "旋转",
                 "$Description": "",
                 "#mode": {
-                    "$Text": "Mode",
+                    "$Text": "模式",
                     "$Options": {
-                        "#dynamic": "Dynamic",
-                        "#parametric": "Parametric"
+                        "#dynamic": "动态",
+                        "#parametric": "参数化"
                     }
                 },
                 "#initial_rotation": {
-                    "$Text": "Start Rotation",
-                    "$Description": "Specifies the initial rotation in degrees."
+                    "$Text": "初始角度",
+                    "$Description": "粒子旋转前的角度"
                 },
                 "#rotation_rate": {
-                    "$Text": "Speed",
-                    "$Description": "Specifies the spin rate in degrees/second."
+                    "$Text": "速度",
+                    "$Description": "粒子的旋转速度，单位度每秒"
                 },
                 "#rotation_acceleration": {
-                    "$Text": "Acceleration",
-                    "$Description": "Acceleration applied to the rotation speed of the particle in degrees/sec/sec."
+                    "$Text": "加速度",
+                    "$Description": "粒子的旋转加速度，单位度每平方秒"
                 },
                 "#rotation_drag_coefficient": {
-                    "$Text": "Linear Drag",
-                    "$Description": "Rotation resistance. Higher numbers will retard the rotation over time."
+                    "$Text": "阻力",
+                    "$Description": "粒子的旋转阻力"
                 },
                 "#rotation": {
-                    "$Text": "Rotation",
-                    "$Description": "Directly set the rotation of the particle."
+                    "$Text": "角度",
+                    "$Description": "粒子的旋转角度"
                 }
             },
             "#collision": {
-                "$Text": "Collision",
+                "$Text": "碰撞",
                 "#toggle": {
-                    "$Text": "Collide",
+                    "$Text": "碰撞检测",
                     "$Description": "Enable collision of the particle with the world."
                 },
                 "#collision_radius": {
-                    "$Text": "Radius",
+                    "$Text": "半径",
                     "$Description": "The radius of the particle, as used for collision."
                 },
                 "#collision_drag": {
-                    "$Text": "Collision Drag",
+                    "$Text": "阻力",
                     "$Description": "Alters the speed of the particle when it has collided."
                 },
                 "#coefficient_of_restitution": {
-                    "$Text": "Bounciness",
+                    "$Text": "弹性系数",
                     "$Description": "The amount of momentum that is maintained on bounce. Set to 0.0 to not bounce, 1.0 to bounce back up to original height."
                 },
                 "#condition": {
-                    "$Text": "Condition",
-                    "$Description": "Enables collision when true / non-zero or unset."
+                    "$Text": "碰撞条件",
+                    "$Description": "当表达式非零时，才会启用碰撞检测"
                 },
                 "#events": {
-                    "$Text": "Events",
-                    "$Description": "Events to fire when the particle collides."
+                    "$Text": "事件",
+                    "$Description": "粒子碰撞时触发的事件"
                 },
                 "#expire_on_contact": {
-                    "$Text": "Expire On Contact",
-                    "$Description": "Removes the particle when it hits a block."
+                    "$Text": "碰撞后消失",
+                    "$Description": "粒子碰到方块时会立即销毁"
                 }
             }
         },
         "#appearance": {
-            "$Text": "Appearance",
+            "$Text": "外观",
             "#appearance": {
-                "$Text": "Appearance",
+                "$Text": "外观",
                 "#size": {
-                    "$Text": "Size",
+                    "$Text": "尺寸",
                     "$Description": "Specifies the x/y size of the particle billboard."
                 },
                 "#material": {
-                    "$Text": "Material",
+                    "$Text": "材质",
                     "$Description": "Material to use for the particles.",
                     "$Options": {
-                        "#particles_alpha": "Alpha Test",
-                        "#particles_blend": "Blend",
-                        "#particles_add": "Additive",
-                        "#particles_opaque": "Opaque",
-                        "#custom": "Custom"
+                        "#particles_alpha": "透明度测试 (AlphaTest)",
+                        "#particles_blend": "混合 (Blend)",
+                        "#particles_add": "叠加 (Additive)",
+                        "#particles_opaque": "不透明 (Opaque)",
+                        "#custom": "自定义"
                     }
                 },
                 "#facing_camera_mode": {
-                    "$Text": "Facing",
+                    "$Text": "朝向",
                     "$Description": "Modes to orient the particle billboards facing the camera.",
                     "$Options": {
                         "#rotate_xyz": "Rotate XYZ",
@@ -358,35 +356,35 @@
                     "$Description": "Specifies how to calculate the billboard direction of a particle.",
                     "$Options": {
                         "#derive_from_velocity": "From Motion",
-                        "#custom": "Custom"
+                        "#custom": "自定义"
                     }
                 },
                 "#speed_threshold": {
-                    "$Text": "Min Speed",
+                    "$Text": "最小速度",
                     "$Description": "The direction is set if the speed of the particle is above the threshold. The default is 0.01."
                 },
                 "#direction": {
-                    "$Text": "Direction",
+                    "$Text": "方向",
                     "$Description": "The facing direction of emitted particles."
                 },
                 "#light": {
-                    "$Text": "Environment Lighting",
+                    "$Text": "环境光",
                     "$Description": "If enabled, the particle gets darker at night and in darker areas. Otherwise the particle always displays at full brightness."
                 }
             },
             "#color": {
-                "$Text": "Color",
+                "$Text": "颜色",
                 "$Description": "",
                 "#mode": {
-                    "$Text": "Color Mode",
+                    "$Text": "填充",
                     "$Options": {
-                        "#static": "Static",
-                        "#gradient": "Gradient",
-                        "#expression": "Expression"
+                        "#static": "静态",
+                        "#gradient": "渐变",
+                        "#expression": "表达式"
                     }
                 },
                 "#picker": {
-                    "$Text": "Color",
+                    "$Text": "颜色",
                     "$Description": "Set a static color for all emitted particles. Transparency is supported if the material supports blending."
                 },
                 "#interpolant": {
@@ -394,32 +392,32 @@
                     "$Description": "Interpolant for the gradient value. A color for each particle will be picked from the gradient using the result of this expression, between 0 and \"Range\"."
                 },
                 "#range": {
-                    "$Text": "Range",
+                    "$Text": "范围",
                     "$Description": "The range of the color gradient. By default, gradients range from 0 to 1."
                 },
                 "#gradient": {
-                    "$Text": "Gradient",
+                    "$Text": "渐变",
                     "$Description": "Create a gradient by setting, arranging, and recoloring individual color points."
                 },
                 "#expression": {
-                    "$Text": "Color",
+                    "$Text": "颜色",
                     "$Description": "Set the color per particle using Molang expressions in RGBA channels between 0 and 1. Alpha channel is supported if the material supports blending."
                 }
             }
         },
         "#texture": {
-            "$Text": "Texture & UV",
+            "$Text": "纹理 & UV",
             "#texture": {
-                "$Text": "Texture",
+                "$Text": "纹理",
                 "#path": {
-                    "$Text": "Texture",
+                    "$Text": "路径",
                     "$Description": "Path to the texture, starting from the texture pack. Example: textures/particle/snowflake."
                 }
             },
             "#uv": {
                 "$Text": "UV",
                 "#mode": {
-                    "$Text": "UV Mode",
+                    "$Text": "UV 模式",
                     "$Description": "",
                     "$Options": {
                         "#static": "Static",
@@ -428,15 +426,15 @@
                     }
                 },
                 "#size": {
-                    "$Text": "Texture Size",
+                    "$Text": "纹理尺寸",
                     "$Description": "Resolution of the texture, used for UV mapping."
                 },
                 "#uv": {
-                    "$Text": "UV Start",
+                    "$Text": "UV 起始位置",
                     "$Description": "UV start coordinates."
                 },
                 "#uv_size": {
-                    "$Text": "UV Size",
+                    "$Text": "UV 大小",
                     "$Description": "UV size coordinates"
                 },
                 "#uv_step": {
@@ -456,25 +454,25 @@
                     "$Description": "Enable to stretch the frames in the animation to the expected lifetime of the particle."
                 },
                 "#loop": {
-                    "$Text": "Loop",
+                    "$Text": "循环",
                     "$Description": "Loop the texture animation."
                 }
             }
         },
         "#lifetime": {
-            "$Text": "Time",
+            "$Text": "时间",
             "#lifetime": {
-                "$Text": "Particle Lifetime",
+                "$Text": "粒子生命周期",
                 "#max_lifetime": {
-                    "$Text": "Max Age",
+                    "$Text": "最大寿命",
                     "$Description": "Maximum age of the particle in seconds."
                 },
                 "#expiration_expression": {
-                    "$Text": "Kill Expression",
+                    "$Text": "销毁条件",
                     "$Description": "This expression makes the particle expire when true (non-zero)."
                 },
                 "#kill_plane": {
-                    "$Text": "Kill Plane",
+                    "$Text": "消失平面",
                     "$Description": "Particles that cross this plane expire. The plane is relative to the emitter, but oriented in world space. The four parameters are the usual 4 elements of a plane equation."
                 },
                 "#expire_in": {
@@ -488,18 +486,18 @@
             }
         },
         "#events": {
-            "$Text": "Events",
+            "$Text": "事件",
             "#events": {
-                "$Text": "Events"
+                "$Text": "事件"
             },
             "#emitter_events": {
-                "$Text": "Emitter Event Triggers",
+                "$Text": "发射器事件",
                 "#creation": {
-                    "$Text": "On Creation",
+                    "$Text": "开始时",
                     "$Description": "Events to fire when the emitter is spawned."
                 },
                 "#expiration": {
-                    "$Text": "On Expiration",
+                    "$Text": "停止时",
                     "$Description": "Events to fire when the emitter stops to exist."
                 },
                 "#travel_distance": {
@@ -516,13 +514,13 @@
                 }
             },
             "#particle_events": {
-                "$Text": "Particle Event Triggers",
+                "$Text": "粒子事件",
                 "#creation": {
-                    "$Text": "On Creation",
+                    "$Text": "生成时",
                     "$Description": "Events to fire when the particle is spawned."
                 },
                 "#expiration": {
-                    "$Text": "On Expiration",
+                    "$Text": "销毁时",
                     "$Description": "Events to fire when the particle stops to exist."
                 },
                 "#timeline": {
@@ -532,9 +530,9 @@
             }
         },
         "#variables": {
-            "$Text": "Variables & Curves",
+            "$Text": "变量 & 曲线",
             "#variables": {
-                "$Text": "Variables",
+                "$Text": "变量",
                 "#creation_vars": {
                     "$Text": "Start Variables",
                     "$Description": "Set up Molang variables when the emitter starts."
@@ -553,46 +551,46 @@
                 }
             },
             "#curves": {
-                "$Text": "Curves",
+                "$Text": "曲线",
                 "#id": {
-                    "$Text": "Name",
+                    "$Text": "名称",
                     "$Description": "The Molang variable to be used later in Molang expressions. Must begin with \"variable\"."
                 },
                 "#mode": {
-                    "$Text": "Mode",
+                    "$Text": "模式",
                     "$Description": "Curve interpolation type.",
                     "$Options": {
                         "#catmull_rom": "Catmull Rom",
-                        "#linear": "Linear",
-                        "#bezier": "Bézier",
+                        "#linear": "线性 (Linear)",
+                        "#bezier": "贝塞尔 (Bézier)",
                         "#bezier_chain": "Bézier Chain"
                     }
                 },
                 "#input": {
-                    "$Text": "Input",
+                    "$Text": "输入",
                     "$Description": "Horizontal input."
                 },
                 "#range": {
-                    "$Text": "Range",
+                    "$Text": "范围",
                     "$Description": "Horizontal range that the input is mapped to."
                 }
             }
         },
         "#test_quick_setup_button": {
-            "$Text": "Quick Setup"
+            "$Text": "快速设置"
         },
         "EventList": {
-            "Event ID": "Event ID",
-            "Remove Event": "Remove Event"
+            "Event ID": "事件标识符",
+            "Remove Event": "移除事件"
         },
         "EventPicker": {
-            "#no_events_available": "No events available"
+            "#no_events_available": "暂无可用事件"
         },
         "EventSubpart": {
             "#sequence": {
                 "$Text": "Sequence",
                 "#remove_button": {
-                    "$Description": "Remove Option"
+                    "$Description": "移除"
                 },
                 "#list_add_button": {
                     "$Description": "Add Sequence Option"
@@ -600,45 +598,45 @@
             },
             "#randomize": {
                 "$Text": "Randomize",
-                "Weight": "Weight",
+                "Weight": "权重",
                 "#remove_button": {
-                    "$Description": "Remove Option"
+                    "$Description": "移除"
                 },
                 "#list_add_button": {
                     "$Description": "Add Sequence Option"
                 }
             },
             "#particle_effect": {
-                "$Text": "Particle Effect",
+                "$Text": "粒子效果",
                 "Identifier": {
-                    "$Text": "Identifier",
+                    "$Text": "标识符",
                     "#new_particle_identifier": {
                         "$Description": "Create New Particle"
                     },
                     "#select_particle_file": {
-                        "$Description": "Select File"
+                        "$Description": "选择文件"
                     },
                     "#select_particle_texture": {
-                        "$Description": "Select Texture"
+                        "$Description": "选择纹理"
                     },
                     "#edit_particle_file": {
                         "$Description": "Edit Linked Particle Effect"
                     },
                     "#new_particle_dialog": {
-                        "$Text": "Identifier",
-                        "Confirm": "Confirm",
-                        "Cancel": "Cancel"
+                        "$Text": "标识符",
+                        "Confirm": "确认",
+                        "Cancel": "取消"
                     }
                 },
                 "Type": {
-                    "$Text": "Type"
+                    "$Text": "类型"
                 },
                 "Expression": {
-                    "$Text": "Expression"
+                    "$Text": "表达式"
                 }
             },
             "#sound_effect": {
-                "$Text": "Sound",
+                "$Text": "音效",
                 "Sound Event": "Sound Event"
             },
             "#expression": {
@@ -646,76 +644,76 @@
                 "$Description": "Run a Molang expression on the event firing emitter."
             },
             "#create_bar": {
-                "Particle": "Particle",
-                "Sound": "Sound",
-                "Expression": "Expression",
+                "Particle": "粒子效果",
+                "Sound": "音效",
+                "Expression": "表达式",
                 "Sequence": "Sequence",
                 "Randomize": "Randomize"
             }
         },
         "QuickSetup": {
             "#shape_and_motion": {
-                "$Text": "Shape & Motion",
+                "$Text": "形状 & 运动",
                 "#shape": {
-                    "#sphere": "Sphere",
-                    "#rain": "Rain",
-                    "#ring": "Ring",
-                    "#gravitate": "Gravitate to Center"
+                    "#sphere": "发散",
+                    "#rain": "下雨",
+                    "#ring": "圆环",
+                    "#gravitate": "聚集"
                 },
-                "#speed": "Speed"
+                "#speed": "速度"
             },
             "#timing": {
-                "$Text": "Timing",
+                "$Text": "时间",
                 "#timing": {
-                    "#burst": "Burst",
-                    "#steady": "Steady"
+                    "#burst": "瞬间生成",
+                    "#steady": "持续生成"
                 },
-                "#amount": "Amount",
-                "#particle_lifetime": "Particle Lifetime"
+                "#amount": "数量",
+                "#particle_lifetime": "粒子寿命"
             },
             "#physics": {
-                "$Text": "Physics",
+                "$Text": "物理",
                 "#collision": {
-                    "#none": "None",
-                    "#solid": "Solid",
-                    "#smoke": "Smoke",
-                    "#ball": "Ball",
-                    "#paper": "Paper"
+                    "#none": "无",
+                    "#solid": "固体",
+                    "#smoke": "烟雾",
+                    "#ball": "球",
+                    "#paper": "纸"
                 }
             },
             "#sprite": {
-                "$Text": "Sprite",
+                "$Text": "精灵",
                 "#license": {
-                    "$Content": "All sprites listed below are ${LinkText} and free to use and modify.",
-                    "$LinkText": "copyright-free (CC0)"
+                    "$Content": "以下精灵图均为${LinkText}，可免费使用或修改",
+                    "$LinkText": "无版权 (CC0)"
                 },
                 "#sprite": {
-                    "#ball": "Ball",
-                    "#dirt": "Dirt",
-                    "#leaves": "Leaves",
-                    "#smoke": "Smoke",
-                    "#dust": "Dust",
-                    "#sparkle": "Sparkle",
-                    "#magic": "Magic"
+                    "#ball": "球",
+                    "#dirt": "泥",
+                    "#leaves": "叶",
+                    "#smoke": "烟",
+                    "#dust": "尘",
+                    "#sparkle": "闪光",
+                    "#magic": "魔法"
                 },
-                "#random_rotation": "Random Rotation",
-                "#lighting": "Glow in the dark"
+                "#random_rotation": "随机旋转",
+                "#lighting": "黑暗中发光"
             }
         },
         "TextureInput": {
             "#toolbar": {
-                "#select": "Select",
-                "#brush": "Brush",
-                "#eraser": "Eraser",
-                "#fill_tool": "Paint Bucket",
-                "#color_picker": "Color Picker",
-                "#reload_texture": "Reload Texture",
-                "#new_texture": "New Texture",
-                "#save_texture": "Save"
+                "#select": "选择",
+                "#brush": "画笔",
+                "#eraser": "橡皮檫",
+                "#fill_tool": "颜料桶",
+                "#color_picker": "取色器",
+                "#reload_texture": "重新加载纹理",
+                "#new_texture": "新建纹理",
+                "#save_texture": "保存"
             },
             "#undo_controls": {
-                "#undo": "Undo",
-                "#redo": "Redo"
+                "#undo": "撤销",
+                "#redo": "重做"
             },
             "#texture_viewport": {
                 "#uv_perimeter_preview": "UV Perimeter",
@@ -727,10 +725,10 @@
                 "#maximize": "Center Viewport"
             },
             "#new_texture_dialog": {
-                "Width": "Width",
-                "Height": "Height",
-                "Confirm": "Confirm",
-                "Cancel": "Cancel"
+                "Width": "宽度",
+                "Height": "高度",
+                "Confirm": "确认",
+                "Cancel": "取消"
             }
         }
     }
