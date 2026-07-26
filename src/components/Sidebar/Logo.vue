@@ -58,7 +58,7 @@
 					id="path4505" />
 			</g>
 		</svg>
-		<span>{{version}}</span>
+		<span>{{version}}{{fork ? `, ${fork}`: ''}}{{nickname ? `, ${nickname}`: '' }}</span>
 	</div>
 </template>
 
@@ -67,7 +67,9 @@
 export default {
 	name: 'logo',
 	data() {return {
-		version: VERSION
+		version: VERSION,
+		fork: 'Alpha',
+		nickname: undefined,
 	}}
 }
 </script>
