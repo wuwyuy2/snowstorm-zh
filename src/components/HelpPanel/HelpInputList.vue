@@ -9,14 +9,18 @@
 				<Gauge v-else-if="input.type == 'number'" title="Number" />
 				<Palette v-else-if="input.type == 'color'" title="Color" />
 				<Zap v-else-if="input.type == 'event_trigger'" title="Event Trigger" />
-				{{ input.label || getInput(inp_key).label }}
+				{{ $t(`Sidebar.#${category_key}.#${page_key}.#${inp_key}.$Text`) }}
+				<span style="font-size: 0.8em;">({{ input.label || getInput(inp_key).label }})</span>
 			</h2>
 			<div v-if="input.type == 'molang'" class="input_info_bar">
-				<span class="input_type_label">{{ labels[input.type] }}</span>
-				<span class="input_context_label" v-if="input.type == 'molang'" :style="{backgroundColor: input_context_color[input.context||'emitter']}">{{ labels[input.context||'emitter'] }}</span>
-				<span class="input_evaluation" v-if="input.evaluation">{{ labels['evaluation_'+input.evaluation] }}</span>
+				<span class="input_type_label">{{ $t(`HelpInputList.#labels.#${input.type}`) || labels[input.type] }}</span>
+				<span class="input_context_label" v-if="input.type == 'molang'" :style="{backgroundColor: input_context_color[input.context||'emitter']}">{{ $t(`HelpInputList.#labels.#${input.context||'emitter'}`) || labels[input.context||'emitter'] }}</span>
+				<span class="input_evaluation" v-if="input.evaluation"
+					>{{ $t(`HelpInputList.#labels.#evaluation_${input.evaluation}`) || labels['evaluation_'+input.evaluation] }}</span>
 			</div>
-			<p v-if="input.display_input_info != false">{{ input.info || consistentPuncuation(getInput(inp_key).info) }}</p>
+			<p v-if="input.display_input_info != false"
+				>{{ $t(`Sidebar.#${category_key}.#${page_key}.#${inp_key}.$Description`)
+					|| input.info || consistentPuncuation(getInput(inp_key).info) }}</p>
 			<HelpText :class="{select_description: input.type == 'select'}" v-if="input.text" :text="input.text"></HelpText>
 		</div>
 	</section>
@@ -106,6 +110,9 @@ export default {
 		background-color: var(--color-bar);
 		border: 1px solid var(--color-dark);
 		border-radius: 3px;
+	}
+	h2 > span {
+		font-size: 0.8em;
 	}
 	.input_info_bar {
 		background-color: var(--color-dark);

@@ -3,8 +3,27 @@
         "Copy": "复制"
     },
     "HelpPanel": {
+        "$Text": "文档",
         "#back_button": {
             "$Text": "返回目录"
+        }
+    },
+    "HelpInputList": {
+        "#labels": {
+            "#text": "文本",
+            "#number": "数值",
+            "#molang": "Molang",
+			"#toggle": "Toggle",
+			"#emitter": "Per Emitter",
+			"#particle": "Per Particle",
+			"#curve": "Per Curve",
+			"#spawned_emitter": "Spawned Emitter Context",
+			"#evaluation_once": "Evaluated once",
+			"#evaluation_per_tick": "Evaluated each tick",
+			"#evaluation_per_loop": "Evaluated each loop",
+			"#evaluation_per_use": "Evaluated each time",
+			"#evaluation_per_render": "Evaluated each render",
+			"#evaluation_per_particle": "Evaluated on particle spawn"
         }
     },
     "MenuBar": {
@@ -33,18 +52,20 @@
             "Take Screenshot": "截图"
         },
         "Language": {
-            "$Title": "语言"
+            "$Title": "语言",
+            "en": "English",
+            "zh_CN": "简体中文"
         },
         "Help": {
             "$Title": "帮助",
             "Open Documentation": "文档",
-            "Molang Reference": "Molang 参考",
+            "Molang Reference": "Molang参考",
             "Snowstorm Tutorial": "教程",
             "Tutorial Video": "视频教程",
             "Format Documentation": "文档格式",
-            "Molang Grapher": "Molang 数学工具",
+            "Molang Grapher": "Molang数学工具",
             "Report a Bug": "报告漏洞",
-            "Discord Server": "Discord 服务器"
+            "Discord Server": "Discord服务器"
         },
         "Documentation": "文档",
         "Share": "分享",
@@ -55,7 +76,7 @@
     "Preview": {
         "#show_placeholder_bar": {
             "$Description": "将查询变量应用到所有表达式中",
-            "#no_placeholder": "暂未检测到类似 query.xxx 的查询变量"
+            "#no_placeholder": "暂未检测到类似query.xxx的查询变量"
         },
         "#hide_placeholder_bar": {
             "$Description": "隐藏查询变量栏"
@@ -74,7 +95,7 @@
             "$Description": "预览碰撞效果"
         },
         "#toggle_placeholder_bar": {
-            "$Description": "显示 query.xxx 查询变量栏"
+            "$Description": "显示query.xxx查询变量栏"
         },
         "#start_animation": {
             "$Description": "重新播放"
@@ -150,7 +171,7 @@
                     "$Options": {
                         "#looping": "无限循环",
                         "#once": "仅一次",
-                        "#expression": "Molang 表达式"
+                        "#expression": "Molang表达式"
                     }
                 },
                 "#active_time": {
@@ -327,10 +348,10 @@
                     "$Text": "材质",
                     "$Description": "Material to use for the particles.",
                     "$Options": {
-                        "#particles_alpha": "透明度测试 (AlphaTest)",
-                        "#particles_blend": "混合 (Blend)",
-                        "#particles_add": "叠加 (Additive)",
-                        "#particles_opaque": "不透明 (Opaque)",
+                        "#particles_alpha": "透明度测试(AlphaTest)",
+                        "#particles_blend": "混合(Blend)",
+                        "#particles_add": "叠加(Additive)",
+                        "#particles_opaque": "不透明(Opaque)",
                         "#custom": "自定义"
                     }
                 },
@@ -420,7 +441,7 @@
             "#uv": {
                 "$Text": "UV",
                 "#mode": {
-                    "$Text": "UV 模式",
+                    "$Text": "UV模式",
                     "$Description": "",
                     "$Options": {
                         "#static": "Static",
@@ -433,11 +454,11 @@
                     "$Description": "Resolution of the texture, used for UV mapping."
                 },
                 "#uv": {
-                    "$Text": "UV 起始位置",
+                    "$Text": "UV起始位置",
                     "$Description": "UV start coordinates."
                 },
                 "#uv_size": {
-                    "$Text": "UV 大小",
+                    "$Text": "UV大小",
                     "$Description": "UV size coordinates"
                 },
                 "#uv_step": {
@@ -533,7 +554,7 @@
             }
         },
         "#variables": {
-            "$Text": "变量 & 曲线",
+            "$Text": "变量与曲线",
             "#variables": {
                 "$Text": "变量",
                 "#creation_vars": {
@@ -557,16 +578,16 @@
                 "$Text": "曲线",
                 "#id": {
                     "$Text": "名称",
-                    "$Description": "The Molang variable to be used later in Molang expressions. Must begin with \"variable\"."
+                    "$Description": "曲线的标识符，它是一个 Molang 变量，必须以 variable. 开头"
                 },
                 "#mode": {
                     "$Text": "模式",
-                    "$Description": "Curve interpolation type.",
+                    "$Description": "曲线插值类型",
                     "$Options": {
                         "#catmull_rom": "Catmull Rom",
-                        "#linear": "线性 (Linear)",
-                        "#bezier": "贝塞尔 (Bézier)",
-                        "#bezier_chain": "Bézier Chain"
+                        "#linear": "线性(Linear)",
+                        "#bezier": "贝塞尔(Bézier)",
+                        "#bezier_chain": "贝塞尔链"
                     }
                 },
                 "#input": {
@@ -688,7 +709,7 @@
                 "$Text": "精灵",
                 "#license": {
                     "$Content": "以下精灵图均为${LinkText}，可免费使用或修改",
-                    "$LinkText": "无版权 (CC0)"
+                    "$LinkText": "无版权(CC0)"
                 },
                 "#sprite": {
                     "#ball": "球",

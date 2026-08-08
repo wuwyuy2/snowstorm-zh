@@ -3,8 +3,27 @@
         "Copy": "Copy"
     },
     "HelpPanel": {
+        "$Text": "Documentation",
         "#back_button": {
             "$Text": "Back to overview"
+        }
+    },
+    "HelpInputList": {
+        "#labels": {
+            "#text": "Text",
+            "#number": "Number",
+            "#molang": "Molang",
+			"#toggle": "Toggle",
+			"#emitter": "Per Emitter",
+			"#particle": "Per Particle",
+			"#curve": "Per Curve",
+			"#spawned_emitter": "Spawned Emitter Context",
+			"#evaluation_once": "Evaluated once",
+			"#evaluation_per_tick": "Evaluated each tick",
+			"#evaluation_per_loop": "Evaluated each loop",
+			"#evaluation_per_use": "Evaluated each time",
+			"#evaluation_per_render": "Evaluated each render",
+			"#evaluation_per_particle": "Evaluated on particle spawn"
         }
     },
     "MenuBar": {
@@ -146,7 +165,6 @@
             },
             "#lifetime": {
                 "$Text": "Emitter Lifetime",
-                "$Description": "",
                 "#mode": {
                     "$Text": "Mode",
                     "$Description": "",

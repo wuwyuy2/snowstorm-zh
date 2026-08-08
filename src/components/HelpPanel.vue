@@ -8,7 +8,7 @@
 
 		<content ref="content">
 			<template v-if="!category_key">
-				<h1>Documentation</h1>
+				<h1>{{ $t(`HelpPanel.$Text`) }}</h1>
 				<ul>
 					<li v-for="(cat, cat_key) in HelpData">
 						<span class="category_title">{{ cat.title }}</span>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import HelpData from './../help'
+import { getHelpData } from './../help'
 import { X, ChevronLeft, Watch } from 'lucide-vue'
 import HelpText from './HelpPanel/HelpText.vue';
 import HelpInputList from './HelpPanel/HelpInputList.vue';
@@ -45,7 +45,6 @@ export default {
 	data() {return {
 		category_key: '',
 		page_key: '',
-		HelpData,
 	}},
 	components: {
 		HelpText,
@@ -62,8 +61,11 @@ export default {
 		}
 	},
 	computed: {
+		HelpData() {
+			return getHelpData(this.$i18n.locale);
+		},
 		page() {
-			return HelpData[this.category_key]?.pages[this.page_key];
+			return this.HelpData[this.category_key]?.pages[this.page_key];
 		}
 	},
 	methods: {
